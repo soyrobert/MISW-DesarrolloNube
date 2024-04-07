@@ -1,0 +1,6 @@
+Flask==3.0.2
+Flask-RESTful==0.3.10
+SQLAlchemy==2.0.27
+Werkzeug==3.0.1
+SQLAlchemy==2.0.27
+requests==2.31.0
