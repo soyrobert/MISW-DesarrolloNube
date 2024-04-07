@@ -12,9 +12,13 @@ Una vez se tiene corriendo esta imagen en el docker instalandola desde local o c
 
 docker pull rabbitmq:3-management
 
-se corre el contendedor con
+se corre el contendedor con host computador local con el comando:
 
 docker run --rm -it -p 15672:15672 -p 5672:5672 --name some-rabbitmq rabbitmq:3-management
+
+se corre el contenedor con host el network del docker con:
+
+docker run --rm -it --network="host" --name some-rabbitmq rabbitmq:3-management
 
 la consola se puede acceder con 
 
@@ -23,7 +27,6 @@ http://localhost:15672/
 y el usuario default guest y contraseña default guest
 
 # Ejemplo de uso con python
-
-Los archivos send.py y receive.py son un ejemplo sencillo de como se puede usar el broker para enviar y recibir un mensaje. Primer se corre el archivo receive con python receive.py y luego el otro archivo con python send.py.
+El siguiente ejemplo se puede hacer corriendo rabbit con localhost. Los archivos send.py y receive.py son un ejemplo sencillo de como se puede usar el broker para enviar y recibir un mensaje. Primer se corre el archivo receive con python receive.py y luego el otro archivo con python send.py.
 
 Este ejemplo se encuentra en https://www.rabbitmq.com/tutorials/tutorial-one-python
