@@ -2,6 +2,7 @@ version: "3.8"
 
 networks:
   dev-cloud-network:
+        driver: bridge
 
 services:
   nginx:
@@ -23,7 +24,30 @@ services:
       - dev-cloud-network
   # broker:
   #TODO: agregar servicio de broker
-  # database:
+
+  db:
+    container_name: idlr_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: idlr_db
+    image: "postgres:latest"
+    networks:
+      - dev-cloud-network
+    ports:
+      - "5432:5432"
+    volumes:
+      - ${PWD}/src/database/postgres-data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
   #TODO: agregar servicio de base de datos
   # worker:
   #TODO: agregar servicio de worker
+
+volumes:
+  pg-data:
+    driver: local
