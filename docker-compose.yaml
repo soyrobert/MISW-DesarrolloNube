@@ -22,8 +22,16 @@ services:
       - "8000:8000"
     networks:
       - dev-cloud-network
-  # broker:
-  #TODO: agregar servicio de broker
+  broker_video:
+    image: rabbitmq:3-management
+    container_name: broker_video
+    ports:
+      - "5672:5672"  # AMQP
+      - "15672:15672"  # RabbitMQ Management UI
+    networks:
+      - dev-cloud-network
+    volumes:
+      - broker_video_data:/var/lib/broker_video_data
 
   db:
     container_name: idlr_db
@@ -43,11 +51,11 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
-
-  #TODO: agregar servicio de base de datos
+      
   # worker:
   #TODO: agregar servicio de worker
 
 volumes:
   pg-data:
     driver: local
+  broker_video_data:
