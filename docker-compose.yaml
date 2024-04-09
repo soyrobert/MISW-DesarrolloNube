@@ -24,7 +24,7 @@ services:
       - "8000:8000"
     networks:
       - dev-cloud-network
-  rabbit_mq:
+  broker_video:
     image: rabbitmq:3-management
     container_name: rabbit_mq
     ports:
@@ -60,9 +60,9 @@ services:
       context: ./src/worker/worker_video  # Ruta donde se encuentra el Dockerfile
       dockerfile: Dockerfile  # Nombre del Dockerfile
     environment:
-        AMQP_URL: 'amqp://rabbit_mq?connection_attempts=10&retry_delay=10'
+        AMQP_URL: 'amqp://broker_video?connection_attempts=10&retry_delay=10'
     depends_on:
-      - rabbit_mq  
+      - broker_video  
     networks:
       - dev-cloud-network
 
