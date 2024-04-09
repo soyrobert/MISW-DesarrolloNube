@@ -1,8 +1,11 @@
 #!/usr/bin/env python
 import pika, sys, os
+# read rabbitmq connection url from environment variable
+amqp_url = os.environ['AMQP_URL']
+url_params = pika.URLParameters(amqp_url)
 
 def main():
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host='localhost'))
+    connection = pika.BlockingConnection(url_params)
     channel = connection.channel()
 
     channel.queue_declare(queue='hello')

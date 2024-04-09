@@ -1,3 +1,4 @@
+#docker-compose up -d --build
 version: "3.8"
 
 networks:
@@ -23,9 +24,9 @@ services:
       - "8000:8000"
     networks:
       - dev-cloud-network
-  broker_video:
+  rabbit_mq:
     image: rabbitmq:3-management
-    container_name: broker_video
+    container_name: rabbit_mq
     ports:
       - "5672:5672"  # AMQP
       - "15672:15672"  # RabbitMQ Management UI
@@ -53,8 +54,17 @@ services:
       timeout: 5s
       retries: 5
 
-  # worker:
-  #TODO: agregar servicio de worker
+  worker_video:
+    container_name: worker_video
+    build:
+      context: ./src/worker/worker_video  # Ruta donde se encuentra el Dockerfile
+      dockerfile: Dockerfile  # Nombre del Dockerfile
+    environment:
+        AMQP_URL: 'amqp://rabbit_mq?connection_attempts=10&retry_delay=10'
+    depends_on:
+      - rabbit_mq  
+    networks:
+      - dev-cloud-network
 
 volumes:
   pg-data:
