@@ -14,7 +14,13 @@ print(' [*] Waiting for messages. To exit press CTRL+C')
 
 
 def procesar_video(ch, method, properties, body):
-    print(f" [x] Received {body.decode()}")
+    '''
+    - funcion que procesa los videos una vez que se recibe un mensaje en la cola task_queue
+    - en body debe venir el nombre del video a procesar ubicado en la carpeta de videos sin editar
+    - en caso de encontrar el video en la ruta especificada lo procesa y lo guarda en la carpeta de videos editados
+    - imprime en consola el nombre del video que se esta procesando
+    '''
+    print(f" [x] Se ha recibido para procesar el video: {body.decode()}")
     time.sleep(body.count(b'.'))
     print(" [x] Done")
     ch.basic_ack(delivery_tag=method.delivery_tag)
