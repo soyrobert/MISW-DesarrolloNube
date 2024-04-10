@@ -27,7 +27,7 @@ services:
       - dev-cloud-network
   broker_video:
     image: rabbitmq:3-management
-    container_name: rabbit_mq
+    container_name: broker_video
     ports:
       - "5672:5672"  # AMQP
       - "15672:15672"  # RabbitMQ Management UI
