@@ -1,4 +1,5 @@
-#docker-compose up -d --build
+#docker-compose down --rmi all
+#docker-compose up -d
 version: "3.8"
 
 networks:

@@ -12,5 +12,8 @@ COPY . /app
 # Install any needed dependencies specified in requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
+# Without this setting, Python never prints anything out.
+ENV PYTHONUNBUFFERED=1
+
 # Run receiver.py when the container launches
-CMD ["python", "receive.py"]
+CMD ["python", "worker_video.py"]
