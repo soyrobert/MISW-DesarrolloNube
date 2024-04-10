@@ -66,13 +66,13 @@ services:
       - broker_video  
     networks:
       - dev-cloud-network
+    volumes:
+      - videos_sin_editar:/src/uploads/videos_sin_editar
+      - videos_editados:/src/uploads/videos_editados
 
 volumes:
   pg-data:
     driver: local
   broker_video_data:
-  #definicion volume videos
-  #videos_sin_editar:
-  #- src/uploads/videos_sin_editar
-  #videos_editados:
-  #- src/uploads/videos_editados
+  videos_sin_editar: 
+  videos_editados:
