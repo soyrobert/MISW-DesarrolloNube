@@ -24,8 +24,10 @@ def upload_video():
 
     filepath = os.path.join(directory_path, filename)
     file.save(filepath)
+    
+    user_id = 1
 
-    new_task = Task(status='uploaded')
+    new_task = Task(user_id=user_id, file_path=filepath, status='uploaded')
     db.session.add(new_task)
     db.session.commit()
 

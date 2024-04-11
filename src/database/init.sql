@@ -16,3 +16,5 @@ CREATE TABLE IF NOT EXISTS tasks (
     file_path VARCHAR(255) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 ); 
+
+INSERT INTO users (username, password1, email) VALUES ('user', '123', 'user@user.com');
