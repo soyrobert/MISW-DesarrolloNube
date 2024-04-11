@@ -30,3 +30,16 @@ def upload_video():
     db.session.commit()
 
     return jsonify({'message': f'Video {filename} subido', 'task_id': new_task.id}), 201
+
+
+@video_blueprint.route('/tasks', methods=['GET'])
+def get_tasks():
+    print("get tasks")
+    # Query users from the database using SQLAlchemy
+    tasks = Task.query.all()
+    # Serialize users to JSON
+    if not tasks:
+        return jsonify({'data': "no entries"}), 200
+
+    tasks_list = [{'id': task.id, 'status': task.status} for task in tasks]
+    return jsonify({'data': tasks_list}), 200
