@@ -19,8 +19,8 @@ services:
   backend:
     container_name: backend
     build:
-      context: ./src/backend  # Ruta donde se encuentra el Dockerfile
-      dockerfile: Dockerfile  # Nombre del Dockerfile
+      context: ./src/backend
+      dockerfile: Dockerfile
     ports:
       - "8000:8000"
     networks:
