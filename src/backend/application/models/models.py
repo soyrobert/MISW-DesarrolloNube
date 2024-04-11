@@ -14,5 +14,5 @@ class Task(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     timestamp = db.Column(db.DateTime, default=datetime.utcnow)
     status = db.Column(db.String(255), nullable=False)
-    file_path = db.Column(db.String(255), nullable=False)
+    # file_path = db.Column(db.String(255), nullable=False)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)

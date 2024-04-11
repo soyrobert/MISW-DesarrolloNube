@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS tasks (
     user_id INTEGER NOT NULL,
     timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     status VARCHAR(255) NOT NULL,
-    file_path VARCHAR(255) NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users(id)
 ); 
 
