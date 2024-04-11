@@ -17,7 +17,8 @@ def upload_video():
     now = datetime.now()
     year, month, day = now.strftime("%Y"), now.strftime("%m"), now.strftime("%d")
     
-    directory_path = os.path.join(current_app.config['UPLOAD_FOLDER'], year, month, day)
+    project_root = current_app.root_path
+    directory_path = os.path.join(project_root, current_app.config['UPLOAD_FOLDER'], year, month, day)
     
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
@@ -31,7 +32,7 @@ def upload_video():
     db.session.add(new_task)
     db.session.commit()
 
-    return jsonify({'message': f'Video {filename} subido', 'task_id': new_task.id}), 201
+    return jsonify({'message': f'Video {os.path.join(directory_path, filename)} uploaded', 'task_id': new_task.id}), 201
 
 
 @video_blueprint.route('/tasks', methods=['GET'])
