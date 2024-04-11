@@ -69,7 +69,7 @@ services:
     volumes:
       - videos_sin_editar:/src/uploads/videos_sin_editar
       - videos_editados:/src/uploads/videos_editados
-
+      - ./resources/tests/videos:/src/uploads/videos_sin_editar
 volumes:
   pg-data:
     driver: local
