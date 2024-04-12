@@ -6,4 +6,5 @@ class Config:
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     JWT_SECRET_KEY = os.environ.get('JWT_SECRET_KEY', 'tu_jwt_clave_secreta')
     UPLOAD_FOLDER = 'uploads/videos_sin_editar'
+    UPLOAD_FOLDER_EDIT = 'uploads/videos_editados'
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB
