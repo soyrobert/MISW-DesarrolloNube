@@ -23,10 +23,9 @@ def ejecutar_tarea(ch, method, properties, body):
     '''
     print(f" [x] Se ha recibido para procesar el video: {body.decode()}")
     
-    nombre_video=body.decode()
-    ruta_video_prueba='../src/uploads/videos_sin_editar/' + nombre_video
-    ruta_logo='../src/uploads/videos_sin_editar/sample_jpg_image.jpg'
-    ruta_salida='../src/uploads/videos_editados/video_test_editado.mp4'
+    ruta_video_prueba=body.decode()
+    ruta_logo='../src/resources/logo/sample_jpg_image.jpg'
+    ruta_salida='../usr/src/app/uploads/videos_editados/video_test_editado.mp4'
 
     
     procesar_video(ruta_video_prueba,ruta_logo,ruta_salida)
