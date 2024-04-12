@@ -25,6 +25,14 @@ services:
       - "8000:8000"
     networks:
       - dev-cloud-network
+    environment:
+      AMQP_URL: 'amqp://broker_video?connection_attempts=10&retry_delay=10'
+    depends_on:
+      - broker_video
+    volumes:
+    - videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
+    - videos_editados:/usr/src/app/uploads/videos_editados
+
   broker_video:
     image: rabbitmq:3-management
     container_name: broker_video
@@ -33,8 +41,6 @@ services:
       - "15672:15672"  # RabbitMQ Management UI
     networks:
       - dev-cloud-network
-    volumes:
-      - videos_sin_editar:/var/lib/broker_video_data
 
   db:
     container_name: idlr_db
@@ -68,9 +74,9 @@ services:
     networks:
       - dev-cloud-network
     volumes:
-      - videos_sin_editar:/src/uploads/videos_sin_editar
-      - videos_editados:/src/uploads/videos_editados
-      - ./resources/tests/videos:/src/uploads/videos_sin_editar
+      - videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
+      - videos_editados:/usr/src/app/uploads/videos_editados
+      - ./resources/logo:/src/resources/logo
 volumes:
   pg-data:
     driver: local
