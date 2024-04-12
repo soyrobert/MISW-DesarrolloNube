@@ -32,6 +32,9 @@ def upload_video():
     db.session.add(new_task)
     db.session.commit()
 
+    #TODO enviar mensaje a rabbit con contenido igual al nombre del video siguiendo la logica del send.py en carpeta broker 
+
+
     return jsonify({'message': f'Video {os.path.join(directory_path, filename)} uploaded', 'task_id': new_task.id}), 201
 
 
@@ -46,3 +49,5 @@ def get_tasks():
 
     tasks_list = [{'id': task.id, 'status': task.status} for task in tasks]
     return jsonify({'data': tasks_list}), 200
+
+
