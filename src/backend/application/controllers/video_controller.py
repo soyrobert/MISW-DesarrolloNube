@@ -61,15 +61,45 @@ def upload_video():
 
 @video_blueprint.route('/tasks', methods=['GET'])
 def get_tasks():
-    print("get tasks")
-    # Query users from the database using SQLAlchemy
-    tasks = Task.query.all()
+    """
+    Permite recuperar todas las tareas de edición de un usuario autorizado en la aplicación.
+    max (int). Parámetro opcional que filtra la cantidad de resultados de una consulta.
+    order (int). Especifica si los resultados se ordenan de forma ascendente
+    (0) o de forma descendente (1) según el ID de la tarea.
+    """
+    max = request.args.get('max', default=None)
+    order = request.args.get('order', default=None)
+
+    user_id = 1
+
+    tasks = Task.query.filter_by(user_id=user_id)
+
+    if order == '0':
+        tasks = tasks.order_by(Task.id.asc())
+    elif order == '1':
+        tasks = tasks.order_by(Task.id.desc())
+
+    if max:
+        tasks = tasks.limit(max)
+
     # Serialize users to JSON
     if not tasks:
         return jsonify({'data': "no entries"}), 200
 
     tasks_list = [{'id': task.id, 'status': task.status} for task in tasks]
     return jsonify({'data': tasks_list}), 200
+
+@video_blueprint.route('/tasks/<int:task_id>', methods=['GET'])
+def get_task(task_id):
+    task = Task.query.get(task_id)
+    if task is None:
+        return jsonify({'message': 'Task not found'}), 404
+    return jsonify({
+        'task_id': task.id,
+        'timestamp': task.timestamp,
+        'status': task.status,
+        'file_path': task.file_path
+    })
 
 
 @video_blueprint.route('/tasks/<int:task_id>', methods=['DELETE'])
