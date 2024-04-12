@@ -23,12 +23,15 @@ def ejecutar_tarea(ch, method, properties, body):
     '''
     print(f" [x] Se ha recibido para procesar el video: {body.decode()}")
     
-    ruta_video_prueba=body.decode()
+    ruta_video_sin_editar=body.decode()
     ruta_logo='../src/resources/logo/sample_jpg_image.jpg'
-    ruta_salida='../usr/src/app/uploads/videos_editados/video_test_editado.mp4'
+    ruta_video_editado=ruta_video_sin_editar.replace("videos_sin_editar","videos_editados")
+    ruta_video_editado_sinarchivo=ruta_video_editado.replace(ruta_video_editado.split("/")[-1],"")
 
-    
-    procesar_video(ruta_video_prueba,ruta_logo,ruta_salida)
+    if not os.path.exists(ruta_video_editado_sinarchivo):
+        os.makedirs(ruta_video_editado_sinarchivo)
+
+    procesar_video(ruta_video_sin_editar,ruta_logo,ruta_video_editado)
 
     print(" [x] Done")
     ch.basic_ack(delivery_tag=method.delivery_tag)
