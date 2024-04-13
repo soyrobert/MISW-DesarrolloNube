@@ -1,9 +1,17 @@
-from flask import Blueprint, request, current_app, jsonify
-from application.models.models import db, User
+from flask import Blueprint, request, jsonify
+from application.models.models import  User
 from flask_jwt_extended import create_access_token
+from datetime import timedelta
 
-login_blueprint = Blueprint('signup', __name__)
+login_blueprint = Blueprint('login', __name__)
 
+@login_blueprint.route('/auth/login/ping', methods=['GET'])
+def ping():
+    try:
+        User.query.first()
+        return jsonify({'message': 'pong'}), 200
+    except Exception as e:
+        return {'message': 'Ha ocurrido un error'}, 500
 
 @login_blueprint.route('/auth/login', methods=['POST'])
 def login():
@@ -20,24 +28,27 @@ def login():
     - 200: Usuario autenticado
     - 401: Usuario no autenticado
     """
-    data = request.get_json()
+    try:
+        data = request.get_json()
 
-    username = data.get('username')
-    password = data.get('password')
+        username = data.get('username')
+        password = data.get('password')
 
-    # valdiate basic validation str and return error if not empty
-    error = basic_validation(data)
-    if error:
-        return error
+        # valdiate basic validation str and return error if not empty
+        error = basic_validation(data)
+        if error:
+            return error
 
-    # validate user in the database and return error if not empty
-    error = user_validation(username, password)
-    if error:
-        return error
-    
-    # create jwt
-    token = create_access_token(identity=username)
-    return jsonify({'token': token}), 200
+        # validate user in the database and return error if not empty
+        error = user_validation(username, password)
+        if error:
+            return error
+        
+        # create jwt
+        token = create_access_token(identity=username, expires_delta = timedelta(days = 1))
+        return jsonify({'token': token}), 200
+    except:
+        return {'message':'Ha ocurrido un error'}, 500
 
 
 def basic_validation(data) -> str:

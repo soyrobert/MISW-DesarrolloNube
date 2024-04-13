@@ -1,7 +1,16 @@
-from flask import Blueprint, request, current_app, jsonify
+from flask import Blueprint, request, jsonify
 from application.models.models import db, User
 
 signup_blueprint = Blueprint('signup', __name__)
+
+
+@signup_blueprint.route('/auth/signup/ping', methods=['GET'])
+def ping():
+    try:
+        User.query.first()
+        return jsonify({'message': 'pong'}), 200
+    except Exception as e:
+        return {'message': 'Ha ocurrido un error'}, 500
 
 
 @signup_blueprint.route('/auth/signup', methods=['POST'])
@@ -22,32 +31,34 @@ def signup():
     Returns:
     - 201: Usuario creado    
     """
-    data = request.get_json()
+    try:
+        data = request.get_json()
 
-    username = data.get('username')
-    password1 = data.get('password1')
-    password2 = data.get('password2')
-    email = data.get('email')
+        username = data.get('username')
+        password1 = data.get('password1')
+        password2 = data.get('password2')
+        email = data.get('email')
 
-    # valdiate basic validation str and return error if not empty
-    error = basic_validation(data)
-    if error:
-        return error
+        # valdiate basic validation str and return error if not empty
+        error = basic_validation(data)
+        if error:
+            return error
 
-    # validate user in the database and return error if not empty
-    error = user_validation(username, email)
-    if error:
-        return error
+        # validate user in the database and return error if not empty
+        error = user_validation(username, email)
+        if error:
+            return error
 
-    new_user = User(username=username, email=email, password=password1)
-    db.session.add(new_user)
-    db.session.commit()
+        new_user = User(username=username, email=email, password=password1)
+        db.session.add(new_user)
+        db.session.commit()
 
-    return jsonify({'message': 'Usuario creado'}), 201
+        return jsonify({'message': 'Usuario creado'}), 201
+    except Exception as e:
+        return {'message': 'Ha ocurrido un error'}, 500
 
 
-
-def basic_validation(data) -> str:
+def basic_validation(data) -> dict:
     username = data.get('username')
     password1 = data.get('password1')
     password2 = data.get('password2')
@@ -65,7 +76,7 @@ def basic_validation(data) -> str:
     return None
 
 # validation of user in the database
-def user_validation(username: str, email: str) -> str:
+def user_validation(username: str, email: str) -> dict:
     user = User.query.filter_by(username=username).first()
     if user:
         return jsonify({'message': 'El usuario ya existe'}), 400

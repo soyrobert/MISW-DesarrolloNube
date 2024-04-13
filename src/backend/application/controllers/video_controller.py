@@ -1,9 +1,10 @@
-from flask import Blueprint, request, current_app, jsonify, jwt_required
+from flask import Blueprint, request, current_app, jsonify
 from werkzeug.utils import secure_filename
 from application.models.models import db, Task
 import os
 from datetime import datetime
 import pika
+from flask_jwt_extended import jwt_required
 
 video_blueprint = Blueprint('video', __name__)
 
