@@ -1,4 +1,4 @@
-from flask import Blueprint, request, current_app, jsonify
+from flask import Blueprint, request, current_app, jsonify, jwt_required
 from werkzeug.utils import secure_filename
 from application.models.models import db, Task
 import os
@@ -28,6 +28,7 @@ def enviar_tarea_worker_video(nombre_video):
     connection.close()
 
 @video_blueprint.route('/tasks', methods=['POST'])
+@jwt_required()
 def upload_video():
     if 'file' not in request.files:
         return jsonify({'message': 'No file part'}), 400
@@ -60,6 +61,7 @@ def upload_video():
 
 
 @video_blueprint.route('/tasks', methods=['GET'])
+@jwt_required()
 def get_tasks():
     """
     Permite recuperar todas las tareas de edición de un usuario autorizado en la aplicación.
@@ -90,6 +92,7 @@ def get_tasks():
     return jsonify({'data': tasks_list}), 200
 
 @video_blueprint.route('/tasks/<int:task_id>', methods=['GET'])
+@jwt_required()
 def get_task(task_id):
     task = Task.query.get(task_id)
     if task is None:
@@ -103,6 +106,7 @@ def get_task(task_id):
 
 
 @video_blueprint.route('/tasks/<int:task_id>', methods=['DELETE'])
+@jwt_required()
 def delete_task(task_id):
     task = Task.query.get(task_id)
     if task is None:

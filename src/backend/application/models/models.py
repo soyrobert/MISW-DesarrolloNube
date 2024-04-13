@@ -9,6 +9,9 @@ class User(db.Model):
     email = db.Column(db.String(50), nullable=False, unique=True)
     tasks = db.relationship('Task', backref='user', lazy=True)
 
+    def check_password(self, password):
+        return self.password == password
+
 class Task(db.Model):
     __tablename__ = 'tasks'
     id = db.Column(db.Integer, primary_key=True)
