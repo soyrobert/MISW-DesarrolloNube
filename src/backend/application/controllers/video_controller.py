@@ -62,7 +62,7 @@ def upload_video():
 
 
 @video_blueprint.route('/tasks', methods=['GET'])
-# @jwt_required()
+@jwt_required()
 def get_tasks():
     """
     Permite recuperar todas las tareas de edición de un usuario autorizado en la aplicación.
