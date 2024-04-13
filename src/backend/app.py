@@ -4,7 +4,8 @@ from datetime import timedelta
 from config import Config
 from extensions import db
 from application.controllers.video_controller import video_blueprint
-from application.controllers.registro_controller import signup_blueprint, login_blueprint
+from application.controllers.registro_controller import signup_blueprint
+from application.controllers.login_controller import login_blueprint
 
 def create_app(config_class=Config):
     app = Flask(__name__)
