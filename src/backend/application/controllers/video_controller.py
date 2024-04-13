@@ -4,6 +4,7 @@ from application.models.models import db, Task
 import os
 from datetime import datetime
 import pika
+import json
 
 video_blueprint = Blueprint('video', __name__)
 
@@ -54,7 +55,13 @@ def upload_video():
     db.session.add(new_task)
     db.session.commit()
 
-    enviar_tarea_worker_video(filepath)
+    id_task = new_task.id
+
+    parametros_tarea_worker={"filepath":filepath,"id_task":id_task}
+    
+    parametros_tarea_worker_str = json.dumps(parametros_tarea_worker)
+
+    enviar_tarea_worker_video(parametros_tarea_worker_str)
 
     return jsonify({'message': f'Video {os.path.join(directory_path, filename)} uploaded', 'task_id': new_task.id}), 201
 
