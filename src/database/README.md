@@ -18,7 +18,8 @@ REPOSITORY          TAG       IMAGE ID       CREATED         SIZE
 idlr_db             latest    08ba40f5dbb3   7 seconds ago   417MB
 ```
 
-Para crear un contenedor nuevo con la imagen descargada, ejecutar el siguiente comando: `docker run -p 5432:5432 -d --name idlr_db_container idlr_db`
+Para crear un contenedor nuevo con la imagen descargada, ejecutar el siguiente comando: 
+`docker run -p 5432:5432 -d --name idlr_db_container idlr_db`
 
 En este caso el nombre del contenedor sera `idlr_db_container`, status deberia decir UP, como el siguiente output
 

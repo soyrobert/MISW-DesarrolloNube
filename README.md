@@ -1,7 +1,7 @@
 # MISW-DesarrolloNube
 Repositorio Desarrollo de Software en la nube - MISW 4204
 
-# Stack tecnológico
+## Stack tecnológico
 
 1. Python 3.10 o superior.
 2. Flask Framework: Micro framework web.
@@ -29,10 +29,110 @@ de carga HTTP y proxy de correo electrónico para IMAP, POP3 y SMTP. Se utiliza 
 con Gunicorn para desplegar en producción aplicaciones web en Flask. 
 
 
-# Estructura de carpetas
+## Estructura de carpetas
 
 * backend: contenedor donde se implementan los servicios con flask
 * broker: contenedor con servicio de broker de mensajes para manejar la cola de tareas
 * database: contenedor con base de datos postgreSQL
 * worker: contenedor de codigo que escucha las tareas y ejecuta el trabajo de procesamiento de video
 * nginx: api gateway de los microservicios anteriores
+
+
+## Instrucciones de ejecución.
+
+### Clonar el repostorio
+Para clonar el repositorio:
+
+1. Abra una terminal en un directorio de su preferencia.
+2. Ejecute el siguiente comando:
+```bash
+git clone https://github.com/soyrobert/MISW-DesarrolloNube.git
+```
+
+### Ejecutar toda la plataforma:
+Para ejecutar toda la plataforma, ubiquese en la raiz del proyecto/repositorio y ejecute los siguientes:
+
+```bash
+docker-compose down --rmi all
+```
+
+```bash
+docker-compose up -d
+```
+Lo anterior, levantará todos los servicios (_Backend API, BD, Cola de mensajeria, Workers_) necesarios para empezar a consumnirlos.
+
+### Ejecutar y monitorear contenedores individuales
+
+#### Backend API
+Para ejecutar el backend API siga las siguientes instrucciones:
+
+1. Abra una terminal bash.
+2. Ubiquese en la ruta del backend que es la siguiente: "/MISW-DesarrolloNube/src/backend"
+3. Ejecute el comando:
+
+```bash
+python3 app.py
+```
+
+
+#### Base de Datos
+Para levantar el servicio de BD, siga las instruicciones ubicadas en el readme:
+
+```bash
+src/database/README.md
+```
+
+### Consumir servicios
+
+#### Registro
+Para registrarse como usuario, importe el siguiente request (Curl) en su cliente HTTP preferido:
+
+```curl
+curl --location 'http://localhost:8000/api/auth/signup' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "jpuentes",
+    "password1": "123abc456",
+    "password2": "123abc456",
+    "email": "jpuentes@gmail.com"
+}'
+```
+
+Deberá una respuesta como esta:
+
+```curl
+{
+    "message": "Usuario creado"
+}
+```
+
+#### Login
+Para loguerse como usuario, importe el siguiente request (Curl) en su cliente HTTP preferido:
+
+```curl
+curl --location 'http://localhost:8000/api/auth/login' \
+--header 'Content-Type: application/json' \
+--data '{
+    "username": "jpuentes",
+    "password": "123abc456"
+}'
+```
+
+### Consultar tareas
+Para consultar las tareas de procesamientos, importe el siguiente request (Curl) en su cliente HTTP preferido:
+
+**Nota:**  _Debe estar logueado para consumir este servicio._
+
+```curl
+curl --location --request GET 'http://localhost:8000/api/tasks' \
+--header 'Authorization: Bearer {TOKEN}' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "username": "jpuentes",
+    "password1": "123abc456",
+    "password2": "123abc456",
+    "email": "jpuentes@gmail.com"
+}'
+```
+
+
