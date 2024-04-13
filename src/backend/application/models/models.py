@@ -10,7 +10,7 @@ class User(db.Model):
     tasks = db.relationship('Task', backref='user', lazy=True)
 
     def check_password(self, password):
-        return self.password == password
+        return self.password1 == password
 
 class Task(db.Model):
     __tablename__ = 'tasks'

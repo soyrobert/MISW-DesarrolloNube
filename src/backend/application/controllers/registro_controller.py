@@ -10,7 +10,10 @@ def ping():
         User.query.first()
         return jsonify({'message': 'pong'}), 200
     except Exception as e:
-        return {'message': 'Ha ocurrido un error'}, 500
+        return jsonify({
+            'message': 'Ha ocurrido un error',
+            'error': str(e)
+        }), 500
 
 
 @signup_blueprint.route('/auth/signup', methods=['POST'])
@@ -49,13 +52,16 @@ def signup():
         if error:
             return error
 
-        new_user = User(username=username, email=email, password=password1)
+        new_user = User(username=username, email=email, password1=password1)
         db.session.add(new_user)
         db.session.commit()
 
         return jsonify({'message': 'Usuario creado'}), 201
     except Exception as e:
-        return {'message': 'Ha ocurrido un error'}, 500
+        return jsonify({
+            'message': 'Ha ocurrido un error',
+            'error': str(e)
+        }), 500
 
 
 def basic_validation(data) -> dict:

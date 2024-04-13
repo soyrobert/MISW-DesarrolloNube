@@ -11,7 +11,10 @@ def ping():
         User.query.first()
         return jsonify({'message': 'pong'}), 200
     except Exception as e:
-        return {'message': 'Ha ocurrido un error'}, 500
+        return jsonify({
+            'message': 'Ha ocurrido un error',
+            'error': str(e)
+        }), 500
 
 @login_blueprint.route('/auth/login', methods=['POST'])
 def login():
@@ -47,8 +50,11 @@ def login():
         # create jwt
         token = create_access_token(identity=username, expires_delta = timedelta(days = 1))
         return jsonify({'token': token}), 200
-    except:
-        return {'message':'Ha ocurrido un error'}, 500
+    except Exception as e:
+        return jsonify({
+            'message': 'Ha ocurrido un error',
+            'error': str(e)
+        }), 500
 
 
 def basic_validation(data) -> str:
