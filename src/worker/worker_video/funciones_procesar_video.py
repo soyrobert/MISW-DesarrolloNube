@@ -7,7 +7,8 @@ def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
     '''
     funcion que toma la ruta de un video y del logo y 
     genera el video procesado con las especificaciones del enunciado
-    '''
+    '''    
+    
     if not os.path.isfile(ruta_video_prueba):
         return (f"El video de prueba no existe en la ruta especificada: {ruta_video_prueba}")
  

@@ -5,10 +5,11 @@ import os
 from datetime import datetime
 import pika
 from flask_jwt_extended import jwt_required
+import json
 
 video_blueprint = Blueprint('video', __name__)
 
-amqp_url = 'amqp://broker_video?connection_attempts=10&retry_delay=10' #os.environ['AMQP_URL']  #variable de entorno desde docker compose
+amqp_url = os.environ['AMQP_URL']  #variable de entorno desde docker compose
 url_params = pika.URLParameters(amqp_url)
 
 def enviar_tarea_worker_video(nombre_video):
@@ -56,7 +57,13 @@ def upload_video():
     db.session.add(new_task)
     db.session.commit()
 
-    enviar_tarea_worker_video(filepath)
+    id_task = new_task.id
+
+    parametros_tarea_worker={"filepath":filepath,"id_task":id_task}
+    
+    parametros_tarea_worker_str = json.dumps(parametros_tarea_worker)
+
+    enviar_tarea_worker_video(parametros_tarea_worker_str)
 
     return jsonify({'message': f'Video {os.path.join(directory_path, filename)} uploaded', 'task_id': new_task.id}), 201
 

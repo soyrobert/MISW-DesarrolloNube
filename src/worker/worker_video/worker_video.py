@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 import pika, sys, os
 import time
+import json
 from funciones_procesar_video import procesar_video
+
 # read rabbitmq connection url from environment variable
 amqp_url = os.environ['AMQP_URL']
 url_params = pika.URLParameters(amqp_url)
-
+from sqlalchemy import create_engine
 
 connection = pika.BlockingConnection(url_params)
 channel = connection.channel()
@@ -13,6 +15,8 @@ channel = connection.channel()
 channel.queue_declare(queue='task_queue', durable=True)
 print(' [*] Waiting for tasks. To exit press CTRL+C')
 
+engine = create_engine('postgresql://admin:admin@db:5432/idlr_db')
+conn = engine.connect()
 
 def ejecutar_tarea(ch, method, properties, body):
     '''
@@ -23,7 +27,13 @@ def ejecutar_tarea(ch, method, properties, body):
     '''
     print(f" [x] Se ha recibido para procesar el video: {body.decode()}")
     
-    ruta_video_sin_editar=body.decode()
+    parametros_tarea_worker_str=body.decode()
+    print("parametros_tarea_worker_str: " + parametros_tarea_worker_str)
+    parametros_tarea_worker=json.loads(parametros_tarea_worker_str)
+
+    ruta_video_sin_editar=parametros_tarea_worker["filepath"]
+    id_task=parametros_tarea_worker["id_task"]
+
     ruta_logo='../src/resources/logo/sample_jpg_image.jpg'
     ruta_video_editado=ruta_video_sin_editar.replace("videos_sin_editar","videos_editados")
     ruta_video_editado_sinarchivo=ruta_video_editado.replace(ruta_video_editado.split("/")[-1],"")
@@ -32,6 +42,10 @@ def ejecutar_tarea(ch, method, properties, body):
         os.makedirs(ruta_video_editado_sinarchivo)
 
     procesar_video(ruta_video_sin_editar,ruta_logo,ruta_video_editado)
+
+    #TODO Corregir para que tome el id de la tarea correctamente
+    query_actualizar = "UPDATE tasks SET status='processed' WHERE id=" + str(id_task)
+    conn.execute(query_actualizar)
 
     print(" [x] Done")
     ch.basic_ack(delivery_tag=method.delivery_tag)
