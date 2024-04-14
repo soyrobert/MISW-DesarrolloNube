@@ -48,8 +48,7 @@ def upload_video():
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
-    filepath = os.path.join(directory_path, filename)
-    file.save(filepath)
+    
     
     user_id = 1
 
@@ -58,6 +57,9 @@ def upload_video():
     db.session.commit()
 
     id_task = new_task.id
+
+    filepath = os.path.join(directory_path, str(id_task) + "_" + filename)
+    file.save(filepath)
 
     parametros_tarea_worker={"filepath":filepath,"id_task":id_task}
     

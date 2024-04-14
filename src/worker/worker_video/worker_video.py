@@ -43,7 +43,6 @@ def ejecutar_tarea(ch, method, properties, body):
 
     procesar_video(ruta_video_sin_editar,ruta_logo,ruta_video_editado)
 
-    #TODO Corregir para que tome el id de la tarea correctamente
     query_actualizar = "UPDATE tasks SET status='processed' WHERE id=" + str(id_task)
     conn.execute(query_actualizar)
 
