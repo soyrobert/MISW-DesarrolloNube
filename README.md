@@ -27,7 +27,7 @@ git clone https://github.com/soyrobert/MISW-DesarrolloNube.git
 ```
 
 ### Ejecutar toda la plataforma:
-Para ejecutar toda la plataforma, ubiquese en la raiz del proyecto/repositorio y ejecute los siguientes:
+La aplicación está principalmente diseñada para correr en Docker por lo que debe tener instalada esta herramienta en su equipo. Para ejecutar toda la plataforma, corra Docker en el aplicativo de escritorio o en la línea de comandos. Una vez Docker esté corriendo ubiquese en la raiz del proyecto/repositorio donde se encuentra el archivo "docker-compose.yaml" y ejecute los siguientes comandos:
 
 ```bash
 docker-compose down --rmi all
@@ -36,7 +36,10 @@ docker-compose down --rmi all
 ```bash
 docker-compose up -d
 ```
-Lo anterior, levantará todos los servicios (_Backend API, BD, Cola de mensajeria, Workers_) necesarios para empezar a consumnirlos.
+Lo anterior, levantará todos los servicios (_Backend API, BD, Cola de mensajeria, Workers_) necesarios para empezar a consumnirlos. Por ejemplo en el aplicativo de escritorio en windows se ve de la siguiente forma una vez corre:
+
+![image](https://github.com/soyrobert/MISW-DesarrolloNube/assets/17055234/82049003-d766-45bf-ad71-224d4849647c)
+
 
 ### Ejecutar y monitorear contenedores individuales
 
@@ -83,6 +86,12 @@ idlr_db=# select * from tasks;
 ```
 
 ### Consumir servicios
+
+El consumo de servicios se encuntra documentado en postman:
+
+https://www.postman.com/bold-star-394127/workspace/2024-2-ing-soft-nube
+
+igualmente a continuación los explicamos.
 
 #### Registro
 Para registrarse como usuario, importe el siguiente request (Curl) en su cliente HTTP preferido:
