@@ -49,8 +49,6 @@ def upload_video():
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
-    filepath = os.path.join(directory_path, filename)
-    file.save(filepath)
 
     user_identity = get_jwt_identity()
     user = User.query.filter_by(username=user_identity).first()
