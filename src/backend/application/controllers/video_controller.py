@@ -4,8 +4,9 @@ from application.models.models import db, Task
 import os
 from datetime import datetime
 import pika
-from flask_jwt_extended import jwt_required
+from flask_jwt_extended import jwt_required, get_jwt_identity
 import json
+from application.models.models import  User
 
 video_blueprint = Blueprint('video', __name__)
 
@@ -48,11 +49,13 @@ def upload_video():
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
-    
-    
-    user_id = 1
+    filepath = os.path.join(directory_path, filename)
+    file.save(filepath)
 
-    new_task = Task(user_id=user_id, status='uploaded', file_path=video_path)
+    user_identity = get_jwt_identity()
+    user = User.query.filter_by(username=user_identity).first()
+
+    new_task = Task(user_id=user.id, status='uploaded', file_path=video_path)
     db.session.add(new_task)
     db.session.commit()
 
@@ -82,9 +85,11 @@ def get_tasks():
     max = request.args.get('max', default=None)
     order = request.args.get('order', default=None)
 
-    user_id = 1
+    user_identity = get_jwt_identity()
+    user = User.query.filter_by(username=user_identity).first()
+    print(f"USER ID IS {user.id}")
 
-    tasks = Task.query.filter_by(user_id=user_id)
+    tasks = Task.query.filter_by(user_id=user.id)
 
     if order == '0':
         tasks = tasks.order_by(Task.id.asc())
@@ -107,11 +112,15 @@ def get_task(task_id):
     task = Task.query.get(task_id)
     if task is None:
         return jsonify({'message': 'Task not found'}), 404
+    if task.status == "processed":
+        file_path = f"/usr/src/app/uploads/videos_editados/{task.file_path}"
+    else:
+        file_path = ""
     return jsonify({
         'task_id': task.id,
         'timestamp': task.timestamp,
         'status': task.status,
-        'file_path': task.file_path
+        'file_path': file_path
     })
 
 
