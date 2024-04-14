@@ -40,6 +40,15 @@ Lo anterior, levantará todos los servicios (_Backend API, BD, Cola de mensajeri
 
 ![image](https://github.com/soyrobert/MISW-DesarrolloNube/assets/17055234/82049003-d766-45bf-ad71-224d4849647c)
 
+Si necesita por alguna razon volver a correr la plataforma. Lo recomendado es borrar los contenidos de la carpeta "postgres-data" en la carpeta database y volver a correr los comandos:
+
+```bash
+docker-compose down --rmi all
+```
+
+```bash
+docker-compose up -d
+```
 
 ### Ejecutar y monitorear contenedores individuales
 
