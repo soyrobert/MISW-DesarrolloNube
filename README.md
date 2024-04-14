@@ -82,6 +82,29 @@ Para levantar el servicio de BD, siga las instruicciones ubicadas en el readme:
 src/database/README.md
 ```
 
+Si desea conectarse a la BD para realizar consultas directamente lo puede hacer con los siguientes comandos:
+
+Conectarse al contenedor donde corre la BD con dockder exec
+```bash
+docker exec -it idlr_db bash
+```
+
+Una vez dentro del container conectarse a la BD
+```bash
+psql -U admin -d idlr_db
+```
+
+Realizar las consultas necesarias, por ejemplo ver la tabla de tasks
+```bash
+idlr_db=# select * from tasks;
+ id | user_id |         file_path         |         timestamp          |  status
+----+---------+---------------------------+----------------------------+-----------
+  1 |       2 | 2024/04/14/videotest2.mp4 | 2024-04-14 01:37:00.114754 | processed
+  2 |       2 | 2024/04/14/videotest2.mp4 | 2024-04-14 01:38:58.510803 | processed
+  3 |       2 | 2024/04/14/videotest2.mp4 | 2024-04-14 01:43:35.416322 | processed
+  4 |       2 | 2024/04/14/videotest2.mp4 | 2024-04-14 01:44:29.038956 | processed
+```
+
 ### Consumir servicios
 
 #### Registro
