@@ -59,6 +59,10 @@ def upload_video():
 
     id_task = new_task.id
 
+    video_path2 = os.path.join(year, month, day, str(id_task) + "_" + filename)
+    new_task.file_path = video_path2
+    db.session.commit()
+
     filepath = os.path.join(directory_path, str(id_task) + "_" + filename)
     file.save(filepath)
 
@@ -68,7 +72,7 @@ def upload_video():
 
     enviar_tarea_worker_video(parametros_tarea_worker_str)
 
-    return jsonify({'message': f'Video {os.path.join(directory_path, filename)} uploaded', 'task_id': new_task.id}), 201
+    return jsonify({'message': f'Video {filepath} uploaded', 'task_id': new_task.id}), 201
 
 
 @video_blueprint.route('/tasks', methods=['GET'])
