@@ -1,0 +1,4 @@
+1. Agregar el token como una variable de ambiente llamada token
+2. Ejecutar prueba_carga.sh (talvez bajarle la intensidad que nada esta sirviendo, o poner que todo falla)
+3. Dentro de la carpeta de pruebas hay un script que se llama docker_stats.sh que monitorea los recursos del docker y lo salva en un archivo, se pone a correr ambos .sh al mismo tiempo, luego movi el output del dokcer_stats aca, para revisar los CPUs que no estaban muy bien!
+4. Aqui mismo hay otro archivo que se llama prueba_carga_get.sh este haria gets a /tasks, yo esperaria q le vaya mejor

@@ -1,0 +1,480 @@
+2024-04-13 23:30:45
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        119.76%   448.7MiB / 7.659GiB   5.72%     568MB / 4.2MB     0B / 193kB    24
+e44835b5f0a4   idlr_db        0.09%     31.55MiB / 7.659GiB   0.40%     63.5kB / 63.9kB   0B / 8.19kB   11
+240f8638fbbc   broker_video   2.62%     144.6MiB / 7.659GiB   1.84%     112kB / 135kB     0B / 745kB    30
+2024-04-13 23:30:48
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.46%   569MiB / 7.659GiB     7.25%     602MB / 4.38MB    0B / 193kB    39
+e44835b5f0a4   idlr_db        1.05%     55.02MiB / 7.659GiB   0.70%     95.9kB / 94.2kB   0B / 8.19kB   24
+240f8638fbbc   broker_video   14.79%    144.7MiB / 7.659GiB   1.85%     120kB / 145kB     0B / 754kB    30
+2024-04-13 23:30:51
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        128.93%   631.5MiB / 7.659GiB   8.05%     631MB / 4.54MB   0B / 193kB    39
+e44835b5f0a4   idlr_db        19.44%    55.22MiB / 7.659GiB   0.70%     132kB / 121kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   4.35%     145MiB / 7.659GiB     1.85%     171kB / 182kB    0B / 778kB    30
+2024-04-13 23:30:55
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        133.65%   684.1MiB / 7.659GiB   8.72%     691MB / 4.83MB   0B / 193kB    45
+e44835b5f0a4   idlr_db        2.75%     55.27MiB / 7.659GiB   0.70%     157kB / 140kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   4.86%     145MiB / 7.659GiB     1.85%     200kB / 205kB    0B / 799kB    30
+2024-04-13 23:30:59
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        122.30%   702.8MiB / 7.659GiB   8.96%     724MB / 5.02MB   0B / 193kB    40
+e44835b5f0a4   idlr_db        0.28%     55.48MiB / 7.659GiB   0.71%     182kB / 159kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   3.35%     145.1MiB / 7.659GiB   1.85%     249kB / 244kB    0B / 823kB    30
+2024-04-13 23:31:02
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        124.34%   713.9MiB / 7.659GiB   9.10%     787MB / 5.32MB   0B / 193kB    49
+e44835b5f0a4   idlr_db        1.07%     55.65MiB / 7.659GiB   0.71%     213kB / 181kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   8.34%     145.1MiB / 7.659GiB   1.85%     281kB / 269kB    0B / 827kB    30
+2024-04-13 23:31:06
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        130.43%   715MiB / 7.659GiB     9.12%     836MB / 5.56MB   0B / 193kB    56
+e44835b5f0a4   idlr_db        2.38%     55.7MiB / 7.659GiB    0.71%     242kB / 203kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   5.37%     145.1MiB / 7.659GiB   1.85%     315kB / 296kB    0B / 844kB    30
+2024-04-13 23:31:10
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        126.05%   732.5MiB / 7.659GiB   9.34%     883MB / 5.78MB   0B / 193kB    50
+e44835b5f0a4   idlr_db        1.86%     55.72MiB / 7.659GiB   0.71%     261kB / 217kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   9.55%     145.7MiB / 7.659GiB   1.86%     367kB / 337kB    0B / 872kB    30
+2024-04-13 23:31:14
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        142.26%   771MiB / 7.659GiB     9.83%     932MB / 6.02MB   0B / 193kB    55
+e44835b5f0a4   idlr_db        1.90%     55.72MiB / 7.659GiB   0.71%     303kB / 248kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   6.36%     145.2MiB / 7.659GiB   1.85%     404kB / 366kB    0B / 889kB    30
+2024-04-13 23:31:17
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        119.31%   818.6MiB / 7.659GiB   10.44%    980MB / 6.26MB   0B / 193kB    58
+e44835b5f0a4   idlr_db        20.33%    55.92MiB / 7.659GiB   0.71%     332kB / 270kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   9.56%     145.5MiB / 7.659GiB   1.86%     439kB / 394kB    0B / 913kB    30
+2024-04-13 23:31:21
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.16%   854.4MiB / 7.659GiB   10.89%    1.03GB / 6.51MB   0B / 193kB    62
+e44835b5f0a4   idlr_db        1.45%     55.96MiB / 7.659GiB   0.71%     362kB / 293kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   7.20%     146.1MiB / 7.659GiB   1.86%     478kB / 425kB     0B / 934kB    30
+2024-04-13 23:31:25
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.34%   894.6MiB / 7.659GiB   11.41%    1.08GB / 6.73MB   0B / 193kB    62
+e44835b5f0a4   idlr_db        1.49%     55.96MiB / 7.659GiB   0.71%     389kB / 312kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   4.04%     146.4MiB / 7.659GiB   1.87%     515kB / 454kB     0B / 967kB    30
+2024-04-13 23:31:29
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        126.34%   926.3MiB / 7.659GiB   11.81%    1.13GB / 6.98MB   0B / 193kB    63
+e44835b5f0a4   idlr_db        1.26%     55.96MiB / 7.659GiB   0.71%     424kB / 338kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   10.81%    146.1MiB / 7.659GiB   1.86%     566kB / 494kB     0B / 975kB    30
+2024-04-13 23:31:32
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.84%   951MiB / 7.659GiB     12.12%    1.16GB / 7.16MB   0B / 193kB    62
+e44835b5f0a4   idlr_db        0.72%     56.11MiB / 7.659GiB   0.72%     454kB / 360kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   8.69%     146.1MiB / 7.659GiB   1.86%     617kB / 535kB     0B / 999kB    30
+2024-04-13 23:31:36
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        122.93%   986.3MiB / 7.659GiB   12.57%    1.21GB / 7.4MB   0B / 193kB    67
+e44835b5f0a4   idlr_db        2.21%     56.12MiB / 7.659GiB   0.72%     491kB / 388kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   9.80%     146.3MiB / 7.659GiB   1.86%     658kB / 567kB    0B / 1.02MB   30
+2024-04-13 23:31:40
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.38%   1.01GiB / 7.659GiB    13.19%    1.28GB / 7.71MB   0B / 193kB    72
+e44835b5f0a4   idlr_db        12.20%    56.12MiB / 7.659GiB   0.72%     509kB / 401kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   4.87%     146MiB / 7.659GiB     1.86%     696kB / 597kB     0B / 1.05MB   30
+2024-04-13 23:31:43
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.76%   1.041GiB / 7.659GiB   13.59%    1.31GB / 7.91MB   0B / 193kB    71
+e44835b5f0a4   idlr_db        11.19%    56.38MiB / 7.659GiB   0.72%     551kB / 433kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   9.72%     145.7MiB / 7.659GiB   1.86%     743kB / 634kB     0B / 1.07MB   30
+2024-04-13 23:31:47
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        122.48%   1.096GiB / 7.659GiB   14.31%    1.38GB / 8.24MB   0B / 193kB    78
+e44835b5f0a4   idlr_db        0.53%     56.13MiB / 7.659GiB   0.72%     579kB / 453kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   5.82%     145.7MiB / 7.659GiB   1.86%     772kB / 656kB     0B / 1.08MB   30
+2024-04-13 23:31:51
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        122.05%   1.139GiB / 7.659GiB   14.88%    1.42GB / 8.46MB   0B / 193kB    74
+e44835b5f0a4   idlr_db        0.65%     56.14MiB / 7.659GiB   0.72%     607kB / 475kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   8.13%     145.8MiB / 7.659GiB   1.86%     811kB / 688kB     0B / 1.1MB    30
+2024-04-13 23:31:55
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.68%   1.173GiB / 7.659GiB   15.32%    1.47GB / 8.71MB   0B / 193kB    74
+e44835b5f0a4   idlr_db        9.93%     56.16MiB / 7.659GiB   0.72%     636kB / 496kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   9.01%     146.1MiB / 7.659GiB   1.86%     872kB / 738kB     0B / 1.13MB   30
+2024-04-13 23:31:58
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        127.15%   1.202GiB / 7.659GiB   15.69%    1.51GB / 8.94MB   0B / 193kB    67
+e44835b5f0a4   idlr_db        3.84%     56.16MiB / 7.659GiB   0.72%     681kB / 531kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   10.84%    146.3MiB / 7.659GiB   1.87%     902kB / 760kB     0B / 1.15MB   30
+2024-04-13 23:32:02
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        119.36%   1.238GiB / 7.659GiB   16.17%    1.55GB / 9.14MB   0B / 193kB    71
+e44835b5f0a4   idlr_db        1.90%     56.16MiB / 7.659GiB   0.72%     701kB / 545kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   5.20%     146.3MiB / 7.659GiB   1.87%     951kB / 799kB     0B / 1.2MB    30
+2024-04-13 23:32:06
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.59%   1.266GiB / 7.659GiB   16.53%    1.58GB / 9.31MB   0B / 193kB    67
+e44835b5f0a4   idlr_db        0.60%     56.41MiB / 7.659GiB   0.72%     734kB / 570kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   11.89%    146.3MiB / 7.659GiB   1.87%     998kB / 835kB     0B / 1.21MB   30
+2024-04-13 23:32:10
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        126.90%   1.301GiB / 7.659GiB   16.98%    1.63GB / 9.58MB   0B / 193kB    61
+e44835b5f0a4   idlr_db        9.81%     56.16MiB / 7.659GiB   0.72%     770kB / 597kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   6.73%     146.6MiB / 7.659GiB   1.87%     1.03MB / 863kB    0B / 1.23MB   30
+2024-04-13 23:32:13
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.77%   1.352GiB / 7.659GiB   17.65%    1.69GB / 9.84MB   0B / 193kB    70
+e44835b5f0a4   idlr_db        0.95%     56.16MiB / 7.659GiB   0.72%     797kB / 617kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   8.71%     146.4MiB / 7.659GiB   1.87%     1.07MB / 893kB    0B / 1.25MB   30
+2024-04-13 23:32:17
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        119.71%   1.367GiB / 7.659GiB   17.85%    1.71GB / 9.95MB   0B / 193kB    74
+e44835b5f0a4   idlr_db        2.17%     56.66MiB / 7.659GiB   0.72%     819kB / 634kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   4.91%     146.5MiB / 7.659GiB   1.87%     1.11MB / 920kB    0B / 1.28MB   30
+2024-04-13 23:32:21
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        136.78%   1.402GiB / 7.659GiB   18.31%    1.76GB / 10.2MB   0B / 193kB    75
+e44835b5f0a4   idlr_db        2.24%     56.16MiB / 7.659GiB   0.72%     838kB / 648kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   8.68%     146.6MiB / 7.659GiB   1.87%     1.14MB / 948kB    0B / 1.3MB    30
+2024-04-13 23:32:25
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        127.14%   1.372GiB / 7.659GiB   17.92%    1.79GB / 10.4MB   0B / 193kB    70
+e44835b5f0a4   idlr_db        0.82%     56.17MiB / 7.659GiB   0.72%     876kB / 676kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   7.25%     146.3MiB / 7.659GiB   1.87%     1.19MB / 985kB    0B / 1.32MB   30
+2024-04-13 23:32:28
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        128.68%   1.382GiB / 7.659GiB   18.05%    1.86GB / 10.7MB   0B / 193kB    79
+e44835b5f0a4   idlr_db        0.49%     56.16MiB / 7.659GiB   0.72%     896kB / 690kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   5.78%     145.6MiB / 7.659GiB   1.86%     1.22MB / 1.01MB   0B / 1.35MB   30
+2024-04-13 23:32:32
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.61%   1.386GiB / 7.659GiB   18.10%    1.91GB / 10.9MB   0B / 193kB    89
+e44835b5f0a4   idlr_db        18.09%    56.2MiB / 7.659GiB    0.72%     921kB / 710kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   6.60%     145.8MiB / 7.659GiB   1.86%     1.26MB / 1.04MB   0B / 1.37MB   30
+2024-04-13 23:32:36
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.36%   1.384GiB / 7.659GiB   18.07%    1.94GB / 11.1MB   0B / 193kB    90
+e44835b5f0a4   idlr_db        1.53%     56.27MiB / 7.659GiB   0.72%     957kB / 736kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   6.06%     145.8MiB / 7.659GiB   1.86%     1.29MB / 1.07MB   0B / 1.38MB   30
+2024-04-13 23:32:39
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.45%   1.384GiB / 7.659GiB   18.07%    2GB / 11.4MB      0B / 193kB    93
+e44835b5f0a4   idlr_db        1.67%     56.28MiB / 7.659GiB   0.72%     988kB / 759kB     0B / 8.19kB   24
+240f8638fbbc   broker_video   6.61%     146.1MiB / 7.659GiB   1.86%     1.33MB / 1.09MB   0B / 1.4MB    30
+2024-04-13 23:32:43
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.40%   1.397GiB / 7.659GiB   18.24%    2.06GB / 11.7MB   0B / 193kB    95
+e44835b5f0a4   idlr_db        0.95%     56.53MiB / 7.659GiB   0.72%     1.01MB / 777kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   6.75%     146MiB / 7.659GiB     1.86%     1.38MB / 1.13MB   0B / 1.43MB   30
+2024-04-13 23:32:47
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        143.63%   1.391GiB / 7.659GiB   18.16%    2.1GB / 11.9MB    0B / 193kB    94
+e44835b5f0a4   idlr_db        1.81%     56.28MiB / 7.659GiB   0.72%     1.04MB / 795kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   14.57%    146MiB / 7.659GiB     1.86%     1.41MB / 1.16MB   0B / 1.46MB   30
+2024-04-13 23:32:51
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        126.64%   1.4GiB / 7.659GiB     18.27%    2.14GB / 12.1MB   0B / 193kB    100
+e44835b5f0a4   idlr_db        0.35%     56.28MiB / 7.659GiB   0.72%     1.06MB / 812kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   14.15%    146.2MiB / 7.659GiB   1.86%     1.43MB / 1.18MB   0B / 1.48MB   30
+2024-04-13 23:32:54
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        136.85%   1.401GiB / 7.659GiB   18.29%    2.15GB / 12.2MB   0B / 193kB    93
+e44835b5f0a4   idlr_db        1.02%     56.28MiB / 7.659GiB   0.72%     1.09MB / 832kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   8.44%     145.8MiB / 7.659GiB   1.86%     1.47MB / 1.21MB   0B / 1.51MB   30
+2024-04-13 23:32:58
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.00%   1.396GiB / 7.659GiB   18.23%    2.21GB / 12.6MB   0B / 193kB    92
+e44835b5f0a4   idlr_db        7.16%     56.28MiB / 7.659GiB   0.72%     1.11MB / 851kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   6.71%     146.2MiB / 7.659GiB   1.86%     1.52MB / 1.24MB   0B / 1.53MB   30
+2024-04-13 23:33:02
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.90%   1.406GiB / 7.659GiB   18.36%    2.26GB / 12.8MB   0B / 193kB    97
+e44835b5f0a4   idlr_db        8.68%     56.29MiB / 7.659GiB   0.72%     1.15MB / 879kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   10.45%    146.2MiB / 7.659GiB   1.86%     1.55MB / 1.27MB   0B / 1.55MB   30
+2024-04-13 23:33:05
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O          BLOCK I/O     PIDS
+ed049d7b831f   backend        123.97%   1.404GiB / 7.659GiB   18.33%    2.3GB / 13.1MB   0B / 193kB    92
+e44835b5f0a4   idlr_db        0.69%     56.29MiB / 7.659GiB   0.72%     1.17MB / 892kB   0B / 8.19kB   24
+240f8638fbbc   broker_video   5.13%     146.1MiB / 7.659GiB   1.86%     1.59MB / 1.3MB   0B / 1.58MB   30
+2024-04-13 23:33:09
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        128.16%   1.412GiB / 7.659GiB   18.44%    2.33GB / 13.3MB   0B / 193kB    89
+e44835b5f0a4   idlr_db        0.87%     56.3MiB / 7.659GiB    0.72%     1.21MB / 926kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   6.56%     145.8MiB / 7.659GiB   1.86%     1.64MB / 1.34MB   0B / 1.59MB   30
+2024-04-13 23:33:13
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        126.67%   1.418GiB / 7.659GiB   18.51%    2.4GB / 13.6MB    0B / 193kB    92
+e44835b5f0a4   idlr_db        8.93%     56.3MiB / 7.659GiB    0.72%     1.24MB / 948kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   7.11%     145.9MiB / 7.659GiB   1.86%     1.67MB / 1.36MB   0B / 1.6MB    30
+2024-04-13 23:33:17
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.97%   1.417GiB / 7.659GiB   18.50%    2.43GB / 13.8MB   0B / 193kB    91
+e44835b5f0a4   idlr_db        3.72%     56.3MiB / 7.659GiB    0.72%     1.28MB / 978kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   12.76%    146MiB / 7.659GiB     1.86%     1.73MB / 1.41MB   0B / 1.62MB   30
+2024-04-13 23:33:20
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        128.12%   1.424GiB / 7.659GiB   18.59%    2.48GB / 14.2MB   0B / 193kB    83
+e44835b5f0a4   idlr_db        0.79%     56.31MiB / 7.659GiB   0.72%     1.31MB / 994kB    0B / 8.19kB   24
+240f8638fbbc   broker_video   6.91%     146.1MiB / 7.659GiB   1.86%     1.78MB / 1.45MB   0B / 1.65MB   30
+2024-04-13 23:33:24
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        128.10%   1.43GiB / 7.659GiB    18.67%    2.53GB / 14.4MB   0B / 193kB    82
+e44835b5f0a4   idlr_db        2.51%     56.55MiB / 7.659GiB   0.72%     1.35MB / 1.03MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   10.17%    146.5MiB / 7.659GiB   1.87%     1.82MB / 1.48MB   0B / 1.67MB   30
+2024-04-13 23:33:28
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        129.73%   1.434GiB / 7.659GiB   18.72%    2.56GB / 14.6MB   0B / 193kB    79
+e44835b5f0a4   idlr_db        10.32%    59.43MiB / 7.659GiB   0.76%     1.39MB / 1.05MB   0B / 8.19kB   26
+240f8638fbbc   broker_video   12.30%    146.6MiB / 7.659GiB   1.87%     1.87MB / 1.52MB   0B / 1.7MB    30
+2024-04-13 23:33:31
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.84%   1.445GiB / 7.659GiB   18.87%    2.62GB / 15MB     0B / 193kB    76
+e44835b5f0a4   idlr_db        1.92%     56.41MiB / 7.659GiB   0.72%     1.41MB / 1.07MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   4.61%     146.6MiB / 7.659GiB   1.87%     1.89MB / 1.54MB   0B / 1.71MB   30
+2024-04-13 23:33:35
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.62%   1.447GiB / 7.659GiB   18.89%    2.67GB / 15.2MB   0B / 193kB    68
+e44835b5f0a4   idlr_db        2.96%     56.44MiB / 7.659GiB   0.72%     1.46MB / 1.11MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   10.86%    146.7MiB / 7.659GiB   1.87%     1.96MB / 1.59MB   0B / 1.71MB   30
+2024-04-13 23:33:39
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.63%   1.468GiB / 7.659GiB   19.17%    2.73GB / 15.7MB   0B / 193kB    34
+e44835b5f0a4   idlr_db        17.85%    50.91MiB / 7.659GiB   0.65%     1.52MB / 1.16MB   0B / 8.19kB   22
+240f8638fbbc   broker_video   0.27%     146.5MiB / 7.659GiB   1.87%     2.04MB / 1.66MB   0B / 1.74MB   30
+2024-04-13 23:33:43
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        128.11%   1.472GiB / 7.659GiB   19.21%    2.76GB / 15.8MB   0B / 193kB    39
+e44835b5f0a4   idlr_db        1.28%     55.98MiB / 7.659GiB   0.71%     1.55MB / 1.19MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   8.72%     145.9MiB / 7.659GiB   1.86%     2.08MB / 1.69MB   0B / 2.06MB   30
+2024-04-13 23:33:46
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.43%   1.505GiB / 7.659GiB   19.65%    2.81GB / 16.1MB   0B / 193kB    43
+e44835b5f0a4   idlr_db        1.82%     56.04MiB / 7.659GiB   0.71%     1.59MB / 1.21MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   6.36%     145.7MiB / 7.659GiB   1.86%     2.12MB / 1.72MB   0B / 2.07MB   30
+2024-04-13 23:33:50
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        131.02%   1.165GiB / 7.659GiB   15.22%    2.87GB / 16.4MB   0B / 193kB    44
+e44835b5f0a4   idlr_db        11.75%    56.59MiB / 7.659GiB   0.72%     1.61MB / 1.23MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   4.83%     145.7MiB / 7.659GiB   1.86%     2.16MB / 1.75MB   0B / 2.1MB    30
+2024-04-13 23:33:54
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        122.64%   1.171GiB / 7.659GiB   15.29%    2.92GB / 16.6MB   0B / 193kB    44
+e44835b5f0a4   idlr_db        9.54%     56.17MiB / 7.659GiB   0.72%     1.64MB / 1.25MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   7.06%     145.7MiB / 7.659GiB   1.86%     2.19MB / 1.78MB   0B / 2.11MB   30
+2024-04-13 23:33:57
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.01%   1.183GiB / 7.659GiB   15.45%    2.97GB / 16.9MB   0B / 193kB    39
+e44835b5f0a4   idlr_db        1.15%     56.27MiB / 7.659GiB   0.72%     1.68MB / 1.28MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   7.74%     145.7MiB / 7.659GiB   1.86%     2.24MB / 1.81MB   0B / 2.13MB   30
+2024-04-13 23:34:01
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        152.84%   1.193GiB / 7.659GiB   15.57%    2.99GB / 17MB     0B / 193kB    40
+e44835b5f0a4   idlr_db        2.40%     56.34MiB / 7.659GiB   0.72%     1.7MB / 1.3MB     0B / 8.19kB   24
+240f8638fbbc   broker_video   8.43%     145.7MiB / 7.659GiB   1.86%     2.27MB / 1.84MB   0B / 2.15MB   30
+2024-04-13 23:34:05
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        126.16%   1.211GiB / 7.659GiB   15.82%    3.04GB / 17.3MB   0B / 193kB    40
+e44835b5f0a4   idlr_db        1.30%     56.38MiB / 7.659GiB   0.72%     1.72MB / 1.31MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   9.66%     145.7MiB / 7.659GiB   1.86%     2.32MB / 1.88MB   0B / 2.19MB   30
+2024-04-13 23:34:09
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        127.00%   1.213GiB / 7.659GiB   15.84%    3.07GB / 17.4MB   0B / 193kB    36
+e44835b5f0a4   idlr_db        1.09%     56.38MiB / 7.659GiB   0.72%     1.77MB / 1.35MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   7.53%     145.8MiB / 7.659GiB   1.86%     2.35MB / 1.91MB   0B / 2.19MB   30
+2024-04-13 23:34:12
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.24%   1.221GiB / 7.659GiB   15.95%    3.13GB / 17.7MB   0B / 193kB    42
+e44835b5f0a4   idlr_db        0.94%     56.38MiB / 7.659GiB   0.72%     1.79MB / 1.36MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   4.46%     146.4MiB / 7.659GiB   1.87%     2.39MB / 1.94MB   0B / 2.22MB   30
+2024-04-13 23:34:16
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        122.10%   1.229GiB / 7.659GiB   16.04%    3.18GB / 18MB     0B / 193kB    45
+e44835b5f0a4   idlr_db        2.41%     56.4MiB / 7.659GiB    0.72%     1.82MB / 1.38MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   5.29%     146.3MiB / 7.659GiB   1.87%     2.42MB / 1.96MB   0B / 2.24MB   30
+2024-04-13 23:34:20
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        222.21%   1.241GiB / 7.659GiB   16.21%    3.22GB / 18.1MB   0B / 193kB    42
+e44835b5f0a4   idlr_db        0.32%     56.39MiB / 7.659GiB   0.72%     1.84MB / 1.4MB    0B / 8.19kB   24
+240f8638fbbc   broker_video   12.41%    146.6MiB / 7.659GiB   1.87%     2.46MB / 1.99MB   0B / 2.27MB   30
+2024-04-13 23:34:23
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        133.56%   1.247GiB / 7.659GiB   16.28%    3.25GB / 18.3MB   0B / 193kB    44
+e44835b5f0a4   idlr_db        1.63%     56.39MiB / 7.659GiB   0.72%     1.87MB / 1.43MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   7.36%     145.9MiB / 7.659GiB   1.86%     2.51MB / 2.03MB   0B / 2.31MB   30
+2024-04-13 23:34:27
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        122.96%   1.255GiB / 7.659GiB   16.39%    3.3GB / 18.5MB    0B / 193kB    43
+e44835b5f0a4   idlr_db        2.11%     56.39MiB / 7.659GiB   0.72%     1.91MB / 1.45MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   12.34%    146.1MiB / 7.659GiB   1.86%     2.54MB / 2.05MB   0B / 2.32MB   30
+2024-04-13 23:34:31
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        126.74%   1.279GiB / 7.659GiB   16.70%    3.36GB / 18.8MB   0B / 193kB    40
+e44835b5f0a4   idlr_db        9.10%     56.4MiB / 7.659GiB    0.72%     1.94MB / 1.47MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   14.02%    145.9MiB / 7.659GiB   1.86%     2.59MB / 2.09MB   0B / 2.34MB   30
+2024-04-13 23:34:34
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        136.22%   1.295GiB / 7.659GiB   16.91%    3.41GB / 19.1MB   0B / 193kB    46
+e44835b5f0a4   idlr_db        1.46%     56.4MiB / 7.659GiB    0.72%     1.96MB / 1.49MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   12.17%    146.1MiB / 7.659GiB   1.86%     2.64MB / 2.13MB   0B / 2.38MB   30
+2024-04-13 23:34:38
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.12%   1.311GiB / 7.659GiB   17.12%    3.46GB / 19.3MB   0B / 193kB    46
+e44835b5f0a4   idlr_db        1.16%     56.41MiB / 7.659GiB   0.72%     1.99MB / 1.51MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   6.25%     146.4MiB / 7.659GiB   1.87%     2.68MB / 2.16MB   0B / 2.4MB    30
+2024-04-13 23:34:42
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.13%   1.328GiB / 7.659GiB   17.34%    3.51GB / 19.5MB   0B / 193kB    46
+e44835b5f0a4   idlr_db        21.76%    56.41MiB / 7.659GiB   0.72%     2.02MB / 1.54MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   8.00%     146.7MiB / 7.659GiB   1.87%     2.72MB / 2.19MB   0B / 2.4MB    30
+2024-04-13 23:34:46
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.35%   1.321GiB / 7.659GiB   17.25%    3.54GB / 19.7MB   0B / 193kB    45
+e44835b5f0a4   idlr_db        1.63%     56.4MiB / 7.659GiB    0.72%     2.06MB / 1.57MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   10.14%    146.4MiB / 7.659GiB   1.87%     2.77MB / 2.23MB   0B / 2.42MB   30
+2024-04-13 23:34:49
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.59%   1.345GiB / 7.659GiB   17.56%    3.59GB / 19.9MB   0B / 193kB    45
+e44835b5f0a4   idlr_db        1.15%     56.4MiB / 7.659GiB    0.72%     2.08MB / 1.58MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   17.53%    146.1MiB / 7.659GiB   1.86%     2.81MB / 2.26MB   0B / 2.44MB   30
+2024-04-13 23:34:53
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        126.20%   1.373GiB / 7.659GiB   17.93%    3.65GB / 20.3MB   0B / 193kB    43
+e44835b5f0a4   idlr_db        1.58%     56.41MiB / 7.659GiB   0.72%     2.13MB / 1.62MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   11.53%    146.3MiB / 7.659GiB   1.86%     2.85MB / 2.29MB   0B / 2.45MB   30
+2024-04-13 23:34:57
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        121.75%   1.39GiB / 7.659GiB    18.15%    3.71GB / 20.5MB   0B / 193kB    47
+e44835b5f0a4   idlr_db        0.97%     56.41MiB / 7.659GiB   0.72%     2.15MB / 1.63MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   7.63%     146.3MiB / 7.659GiB   1.87%     2.9MB / 2.33MB    0B / 2.49MB   30
+2024-04-13 23:35:00
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.12%   1.392GiB / 7.659GiB   18.17%    3.74GB / 20.7MB   0B / 193kB    49
+e44835b5f0a4   idlr_db        1.66%     56.43MiB / 7.659GiB   0.72%     2.19MB / 1.66MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   8.11%     146.4MiB / 7.659GiB   1.87%     2.94MB / 2.36MB   0B / 2.5MB    30
+2024-04-13 23:35:04
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        122.10%   1.418GiB / 7.659GiB   18.51%    3.81GB / 21MB     0B / 193kB    44
+e44835b5f0a4   idlr_db        1.18%     56.41MiB / 7.659GiB   0.72%     2.23MB / 1.69MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   8.61%     146.5MiB / 7.659GiB   1.87%     2.98MB / 2.39MB   0B / 2.52MB   30
+2024-04-13 23:35:08
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.72%   1.441GiB / 7.659GiB   18.81%    3.86GB / 21.2MB   0B / 193kB    48
+e44835b5f0a4   idlr_db        16.10%    56.43MiB / 7.659GiB   0.72%     2.25MB / 1.71MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   8.08%     146.8MiB / 7.659GiB   1.87%     3.03MB / 2.44MB   0B / 2.54MB   30
+2024-04-13 23:35:12
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        133.95%   1.457GiB / 7.659GiB   19.03%    3.89GB / 21.4MB   0B / 193kB    50
+e44835b5f0a4   idlr_db        8.80%     56.43MiB / 7.659GiB   0.72%     2.28MB / 1.73MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   6.65%     146.8MiB / 7.659GiB   1.87%     3.07MB / 2.46MB   0B / 2.58MB   30
+2024-04-13 23:35:15
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        128.49%   1.41GiB / 7.659GiB    18.41%    3.95GB / 21.7MB   0B / 193kB    51
+e44835b5f0a4   idlr_db        6.39%     56.45MiB / 7.659GiB   0.72%     2.32MB / 1.76MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   7.89%     146.9MiB / 7.659GiB   1.87%     3.1MB / 2.49MB    0B / 2.59MB   30
+2024-04-13 23:35:19
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        122.21%   1.39GiB / 7.659GiB    18.15%    4GB / 21.9MB      0B / 193kB    51
+e44835b5f0a4   idlr_db        2.04%     56.43MiB / 7.659GiB   0.72%     2.34MB / 1.78MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   6.98%     146.9MiB / 7.659GiB   1.87%     3.15MB / 2.54MB   0B / 2.61MB   30
+2024-04-13 23:35:23
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.36%   1.405GiB / 7.659GiB   18.35%    4.05GB / 22.2MB   0B / 193kB    54
+e44835b5f0a4   idlr_db        2.73%     56.51MiB / 7.659GiB   0.72%     2.37MB / 1.8MB    0B / 8.19kB   30
+240f8638fbbc   broker_video   6.14%     146.9MiB / 7.659GiB   1.87%     3.19MB / 2.57MB   0B / 2.63MB   30
+2024-04-13 23:35:27
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        122.09%   1.407GiB / 7.659GiB   18.37%    4.1GB / 22.4MB    0B / 193kB    57
+e44835b5f0a4   idlr_db        0.87%     56.43MiB / 7.659GiB   0.72%     2.41MB / 1.82MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   5.36%     146.9MiB / 7.659GiB   1.87%     3.22MB / 2.59MB   0B / 2.65MB   30
+2024-04-13 23:35:30
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        125.40%   1.404GiB / 7.659GiB   18.34%    4.15GB / 22.6MB   0B / 193kB    57
+e44835b5f0a4   idlr_db        1.25%     56.44MiB / 7.659GiB   0.72%     2.44MB / 1.85MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   6.68%     147MiB / 7.659GiB     1.87%     3.26MB / 2.62MB   0B / 2.67MB   30
+2024-04-13 23:35:34
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        127.18%   1.414GiB / 7.659GiB   18.46%    4.2GB / 22.9MB    0B / 193kB    56
+e44835b5f0a4   idlr_db        14.53%    56.43MiB / 7.659GiB   0.72%     2.47MB / 1.87MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   13.24%    147.1MiB / 7.659GiB   1.88%     3.33MB / 2.67MB   0B / 2.7MB    30
+2024-04-13 23:35:38
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        126.63%   1.41GiB / 7.659GiB    18.41%    4.24GB / 23.1MB   0B / 193kB    56
+e44835b5f0a4   idlr_db        13.46%    56.43MiB / 7.659GiB   0.72%     2.5MB / 1.89MB    0B / 8.19kB   24
+240f8638fbbc   broker_video   9.98%     147.1MiB / 7.659GiB   1.88%     3.36MB / 2.7MB    0B / 2.72MB   30
+2024-04-13 23:35:41
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        119.10%   1.415GiB / 7.659GiB   18.48%    4.29GB / 23.3MB   0B / 193kB    70
+e44835b5f0a4   idlr_db        1.51%     54.58MiB / 7.659GiB   0.70%     2.52MB / 1.9MB    0B / 8.19kB   23
+240f8638fbbc   broker_video   0.41%     147.1MiB / 7.659GiB   1.88%     3.37MB / 2.7MB    0B / 2.74MB   30
+2024-04-13 23:35:45
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        123.56%   1.412GiB / 7.659GiB   18.43%    4.37GB / 23.6MB   0B / 193kB    91
+e44835b5f0a4   idlr_db        1.02%     56.39MiB / 7.659GiB   0.72%     2.54MB / 1.92MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   3.06%     147.4MiB / 7.659GiB   1.88%     3.38MB / 2.71MB   0B / 2.75MB   30
+2024-04-13 23:35:49
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        124.61%   1.391GiB / 7.659GiB   18.16%    4.45GB / 24MB     0B / 193kB    77
+e44835b5f0a4   idlr_db        1.76%     56.39MiB / 7.659GiB   0.72%     2.56MB / 1.93MB   0B / 8.19kB   24
+240f8638fbbc   broker_video   8.93%     147.2MiB / 7.659GiB   1.88%     3.42MB / 2.75MB   0B / 2.76MB   30
+2024-04-13 23:35:52
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        127.74%   1.389GiB / 7.659GiB   18.14%    4.51GB / 24.2MB   0B / 193kB    59
+e44835b5f0a4   idlr_db        4.00%     54.54MiB / 7.659GiB   0.70%     2.62MB / 1.98MB   0B / 8.19kB   23
+240f8638fbbc   broker_video   33.37%    147.3MiB / 7.659GiB   1.88%     3.51MB / 2.82MB   0B / 2.77MB   30
+2024-04-13 23:35:56
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        4.22%     1.373GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    6
+e44835b5f0a4   idlr_db        0.00%     37.86MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   1.83%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:00
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        5.57%     1.373GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    6
+e44835b5f0a4   idlr_db        0.09%     37.85MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.35%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:03
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.65%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    6
+e44835b5f0a4   idlr_db        4.95%     37.88MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.50%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:07
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        2.06%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    6
+e44835b5f0a4   idlr_db        0.33%     37.85MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.96%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:11
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.66%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    6
+e44835b5f0a4   idlr_db        0.00%     37.85MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.32%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:14
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.56%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    4
+e44835b5f0a4   idlr_db        5.31%     37.87MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.63%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:18
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.59%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    4
+e44835b5f0a4   idlr_db        0.08%     37.85MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.79%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:22
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.73%     1.373GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    4
+e44835b5f0a4   idlr_db        0.05%     37.85MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.35%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:25
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.74%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    4
+e44835b5f0a4   idlr_db        4.96%     37.85MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.35%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:29
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.76%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    4
+e44835b5f0a4   idlr_db        0.07%     37.85MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.55%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:33
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.99%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    4
+e44835b5f0a4   idlr_db        0.00%     37.85MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   1.09%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
+2024-04-13 23:36:36
+CONTAINER ID   NAME           CPU %     MEM USAGE / LIMIT     MEM %     NET I/O           BLOCK I/O     PIDS
+ed049d7b831f   backend        0.69%     1.372GiB / 7.659GiB   17.92%    4.52GB / 24.4MB   0B / 193kB    4
+e44835b5f0a4   idlr_db        0.00%     37.86MiB / 7.659GiB   0.48%     2.62MB / 1.98MB   0B / 8.19kB   14
+240f8638fbbc   broker_video   0.53%     146.9MiB / 7.659GiB   1.87%     3.52MB / 2.82MB   0B / 3.02MB   30
