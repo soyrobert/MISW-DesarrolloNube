@@ -11,6 +11,8 @@ def create_app(config_class=Config):
     app = Flask(__name__)
     app.config.from_object(config_class)
 
+    # 20 MB max size upload
+    app.config['MAX_CONTENT_LENGTH'] = 20 * 1024 * 1024  
     db.init_app(app)
     # Setup the Flask-JWT-Extended extension
     app.config["JWT_SECRET_KEY"] = "45fba08e-3e90-4fc0-8daa-09f9cc564281"
