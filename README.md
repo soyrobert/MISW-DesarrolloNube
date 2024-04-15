@@ -97,8 +97,8 @@ idlr_db=# select * from tasks;
 ### Consumir servicios
 
 El consumo de servicios se encuntra documentado en postman:
-
-https://www.postman.com/bold-star-394127/workspace/2024-2-ing-soft-nube
+* [Documentacion Postman](https://documenter.getpostman.com/view/1812580/2sA3Bj7tn4) 
+* [Espacio Trabajo Postman](https://www.postman.com/bold-star-394127/workspace/2024-2-ing-soft-nube)
 
 igualmente a continuación los explicamos.
 
