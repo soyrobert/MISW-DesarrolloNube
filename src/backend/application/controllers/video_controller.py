@@ -10,7 +10,7 @@ from application.models.models import  User
 
 video_blueprint = Blueprint('video', __name__)
 
-amqp_url = os.environ['AMQP_URL']  #variable de entorno desde docker compose
+amqp_url = 'amqp://broker_video?connection_attempts=10&retry_delay=10' #os.environ['AMQP_URL']  #variable de entorno desde docker compose
 url_params = pika.URLParameters(amqp_url)
 
 def enviar_tarea_worker_video(nombre_video):
