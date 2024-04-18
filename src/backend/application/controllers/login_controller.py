@@ -8,7 +8,6 @@ login_blueprint = Blueprint('login', __name__)
 @login_blueprint.route('/auth/login/ping', methods=['GET'])
 def ping():
     try:
-        User.query.first()
         return jsonify({'message': 'pong'}), 200
     except Exception as e:
         return jsonify({

@@ -7,7 +7,6 @@ signup_blueprint = Blueprint('signup', __name__)
 @signup_blueprint.route('/auth/signup/ping', methods=['GET'])
 def ping():
     try:
-        User.query.first()
         return jsonify({'message': 'pong'}), 200
     except Exception as e:
         return jsonify({
