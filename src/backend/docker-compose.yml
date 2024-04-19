@@ -9,7 +9,7 @@ services:
     ports:
       - "8000:8000"
     environment:
-      AMQP_URL: 'amqp://broker_video?connection_attempts=10&retry_delay=10'
+      AMQP_URL: 'amqp://10.128.0.7?connection_attempts=10&retry_delay=10'
     volumes:
       - videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
       - videos_editados:/usr/src/app/uploads/videos_editados
