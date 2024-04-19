@@ -1,0 +1,22 @@
+#worker video
+
+sudo docker-compose up -d
+sudo docker-compose down --rmi all
+sudo docker ps --all
+
+sudo docker logs worker_video
+
+
+cd /home/MISW-DesarrolloNube/src/worker/worker_video
+cd /home/ubuntu/remote_folder
+
+#configuracion nfs client
+sudo apt update
+sudo apt install nfs-common
+sudo mkdir -p /home/ubuntu/remote_folder
+sudo nano /etc/fstab
+10.128.0.5:/var/nfs/shared_folder    /home/ubuntu/remote_folder   nfs defaults 0 0
+sudo mount -a
+sudo systemctl daemon-reload
+
+
