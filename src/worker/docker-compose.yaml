@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  worker_video:
+    container_name: worker_video
+    build:
+      context: .   # Ruta donde se encuentra el Dockerfile
+      dockerfile: Dockerfile  # Nombre del Dockerfile
+    environment:
+        AMQP_URL: 'amqp://10.128.0.7?connection_attempts=10&retry_delay=10' 
+    volumes:
+      - /home/videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
+      - /home/videos_editados:/usr/src/app/uploads/videos_editados
+      - ./resources/logo:/src/resources/logo
+
+ 
