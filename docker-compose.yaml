@@ -67,6 +67,7 @@ services:
       dockerfile: Dockerfile  # Nombre del Dockerfile
     environment:
         AMQP_URL: 'amqp://broker_video?connection_attempts=10&retry_delay=10'
+        DATABASE_IP: 'db'
     depends_on:
       - broker_video  
     networks:
