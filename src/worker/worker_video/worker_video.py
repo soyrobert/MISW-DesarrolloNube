@@ -17,7 +17,7 @@ channel = connection.channel()
 channel.queue_declare(queue='task_queue', durable=True)
 print(' [*] Waiting for tasks. To exit press CTRL+C')
 
-engine = create_engine(f'postgresql://admin:admin@{database_ip}:5432/idlr_db')
+engine = create_engine('postgresql://admin:admin@' + database_ip + ':5432/idlr_db')
 conn = engine.connect()
 
 def ejecutar_tarea(ch, method, properties, body):
