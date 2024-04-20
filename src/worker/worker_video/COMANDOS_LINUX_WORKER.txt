@@ -6,9 +6,16 @@ sudo docker ps --all
 
 sudo docker logs worker_video
 
+docker exec -it worker_video /bin/bash
+exit
 
 cd /home/MISW-DesarrolloNube/src/worker/worker_video
 cd /home/ubuntu/remote_folder
+cd /home/ubuntu/remote_folder/videos_sin_editar/2024/04/20
+cd /home/ubuntu/remote_folder/videos_editados/2024/04/20
+
+#en file server
+cd /var/nfs/shared_folder/videos_editados/2024/04/20
 
 #configuracion nfs client
 sudo apt update
@@ -19,4 +26,6 @@ sudo nano /etc/fstab
 sudo mount -a
 sudo systemctl daemon-reload
 
+../src/resources/logo/sample_jpg_image.jpg
 
+/home/ubuntu/remote_folder/videos_editados/2024/04/20/3_video_test_1.mp4
