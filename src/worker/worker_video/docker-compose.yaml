@@ -12,6 +12,6 @@ services:
     volumes:
       - /home/ubuntu/remote_folder/videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
       - /home/ubuntu/remote_folder/videos_editados:/usr/src/app/uploads/videos_editados
-      - ./resources/logo:/src/resources/logo
+      - /home/MISW-DesarrolloNube/resources/logo:/src/resources/logo
 
  

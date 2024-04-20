@@ -6,6 +6,8 @@ from funciones_procesar_video import procesar_video
 
 # read rabbitmq connection url from environment variable
 amqp_url = os.environ['AMQP_URL']
+database_ip = os.environ['DATABASE_IP']
+
 url_params = pika.URLParameters(amqp_url)
 from sqlalchemy import create_engine
 
@@ -15,7 +17,7 @@ channel = connection.channel()
 channel.queue_declare(queue='task_queue', durable=True)
 print(' [*] Waiting for tasks. To exit press CTRL+C')
 
-engine = create_engine('postgresql://admin:admin@db:5432/idlr_db')
+engine = create_engine('postgresql://admin:admin@' + database_ip + ':5432/idlr_db')
 conn = engine.connect()
 
 def ejecutar_tarea(ch, method, properties, body):
