@@ -2,7 +2,8 @@ import os
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY', 'clave_secreta')
-    SQLALCHEMY_DATABASE_URI = "postgresql://admin:admin@db/idlr_db"
+    DATABASE_IP= os.environ['DATABASE_IP']
+    SQLALCHEMY_DATABASE_URI = "postgresql://admin:admin@" + DATABASE_IP + "/idlr_db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     if 'DB_IP' in os.environ:
         SQLALCHEMY_DATABASE_URI = "postgresql://admin:admin@{os.environ['DB_IP']}/idlr_db"
