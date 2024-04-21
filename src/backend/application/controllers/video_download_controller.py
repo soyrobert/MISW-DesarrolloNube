@@ -5,7 +5,7 @@ video_download_blueprint = Blueprint('video_download', __name__)
 
 
 @video_download_blueprint.route('/video/test/download/<string:video_name>', methods=['GET'])
-def download_video(video_name):
+def test_download_video(video_name):
     try:
         if video_name == '':
             return jsonify({'message': 'El nombre del video no puede estar vacío.'}), 400
