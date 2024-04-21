@@ -22,7 +22,7 @@ def download_video(video_name):
         if video_name.endswith(".mp4"):
             video_name = video_name[:-4]
         
-        filename = './video_test/'+str(video_name)+'.mp4'
+        filename = '/usr/src/app/application/controllers/video_test/'+str(video_name)+'.mp4'
         return send_file(filename, as_attachment=True)
     
     except Exception as e:
