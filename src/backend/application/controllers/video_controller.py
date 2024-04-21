@@ -121,7 +121,8 @@ def get_task(task_id):
         'task_id': task.id,
         'timestamp': task.timestamp,
         'status': task.status,
-        'file_path': file_path
+        'file_path': file_path,
+        'download': f'http://35.209.73.204:8000/api/video/download/{task.file_path}',
     })
 
 
