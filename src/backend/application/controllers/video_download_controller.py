@@ -23,6 +23,15 @@ def test_download_video(video_name):
             video_name = video_name[:-4]
         
         filename = '/usr/src/app/application/controllers/video_test/'+str(video_name)+'.mp4'
+
+        try:
+            with open(filename, 'r') as file:
+                pass
+        except FileNotFoundError:
+            return jsonify({
+                'message': 'El video solicitado no se encuentra en el servidor. Por favor, verifique el nombre de su video e intente nuevamente.',
+                'error': str(e)
+            }), 500
         
         return send_file(filename, as_attachment=True)
     
@@ -33,8 +42,8 @@ def test_download_video(video_name):
         }), 500
     
 
-@video_download_blueprint.route('/video/download/<string:video_name>', methods=['GET'])
-def download_video(video_name):
+@video_download_blueprint.route('/video/download/<int:ano>/<int:mes>/<int:dia>/<string:video_name>', methods=['GET'])
+def download_video(ano, mes, dia, video_name):
     try:
         if video_name == '':
             return jsonify({'message': 'El nombre del video no puede estar vacío.'}), 400
@@ -50,8 +59,18 @@ def download_video(video_name):
         
         if video_name.endswith(".mp4"):
             video_name = video_name[:-4]
-        
-        filename = '/usr/src/app/uploads/videos_editados/'+str(video_name)+'.mp4'
+
+
+        filename = '/usr/src/app/uploads/videos_editados/'+str(ano)+'/'+str(mes)+'/'+str(dia)+'/'+str(video_name)+'.mp4'
+
+        try:
+            with open(filename, 'r') as file:
+                pass
+        except FileNotFoundError:
+            return jsonify({
+                'message': 'El video solicitado no se encuentra en el servidor. Por favor, verifique el nombre de su video e intente nuevamente.',
+                'error': str(e)
+            }), 500
 
         return send_file(filename, as_attachment=True)
     
