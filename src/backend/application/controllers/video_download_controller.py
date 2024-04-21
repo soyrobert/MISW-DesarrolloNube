@@ -4,7 +4,7 @@ from flask import Blueprint, jsonify, send_file
 video_download_blueprint = Blueprint('video_download', __name__)
 
 
-@video_download_blueprint.route('/video/test-download/<string:video_name>', methods=['GET'])
+@video_download_blueprint.route('/video/test/download/<string:video_name>', methods=['GET'])
 def download_video(video_name):
     try:
         if video_name == '':
@@ -52,7 +52,7 @@ def download_video(video_name):
             video_name = video_name[:-4]
         
         filename = '/usr/src/app/uploads/videos_editados/'+str(video_name)+'.mp4'
-    
+
         return send_file(filename, as_attachment=True)
     
     except Exception as e:
