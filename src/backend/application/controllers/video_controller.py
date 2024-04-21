@@ -111,18 +111,21 @@ def get_tasks():
 @jwt_required()
 def get_task(task_id):
     task = Task.query.get(task_id)
+    download_url = ''
     if task is None:
         return jsonify({'message': 'Task not found'}), 404
     if task.status == "processed":
         file_path = f"/usr/src/app/uploads/videos_editados/{task.file_path}"
+        download_url = f'http://35.209.73.204:8000/api/video/download/{task.file_path}',
     else:
         file_path = ""
+        download_url = "No disponible para descarga. El video no se ha procesado."
     return jsonify({
         'task_id': task.id,
         'timestamp': task.timestamp,
         'status': task.status,
         'file_path': file_path,
-        'download': f'http://35.209.73.204:8000/api/video/download/{task.file_path}',
+        'download': download_url
     })
 
 
