@@ -60,7 +60,8 @@ def download_video(ano, mes, dia, video_name):
         if video_name.endswith(".mp4"):
             video_name = video_name[:-4]
 
-        filename = '/usr/src/app/uploads/videos_editados/'+str(ano)+'/'+str(mes)+'/'+str(dia)+'/'+str(video_name)+'.mp4'
+        month = str(mes).zfill(2)
+        filename = '/usr/src/app/uploads/videos_editados/'+str(ano)+'/'+str(month)+'/'+str(dia)+'/'+str(video_name)+'.mp4'
 
         try:
             with open(filename, 'r') as file:
