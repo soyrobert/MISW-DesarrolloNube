@@ -1,7 +1,7 @@
 from moviepy.editor import *
 import os
 import numpy as np
-from conexion_gcp import upload_to_bucket
+from fun_interaccion_gcp import upload_to_bucket
 from google.cloud import storage
 
 def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):

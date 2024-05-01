@@ -2,9 +2,6 @@
 #se debe guardar en la carpeta src/worker/worker_video las credenciales de gcp
 
 import os
-
-
-
 from google.cloud import storage
 
 def upload_to_bucket(blob_name, file_path,bucket_name,storage_client):
