@@ -4,3 +4,4 @@ numpy==1.26.4
 pillow==9.5.0
 psycopg2-binary==2.9.3
 sqlalchemy==1.4.31
+google-cloud-storage==2.16.0

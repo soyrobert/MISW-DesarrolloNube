@@ -1,7 +1,8 @@
 from moviepy.editor import *
 import os
 import numpy as np
-
+from conexion_gcp import upload_to_bucket
+from google.cloud import storage
 
 def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
     '''
@@ -39,6 +40,17 @@ def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
 
     #save the clip
     final_clip.write_videofile(ruta_salida,fps=24)
+
+    #save the clip in gcp
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
+    storage_client = storage.Client()
+    blob_name=ruta_salida
+    bucket_name='misw4204-202412-drones-equipo5'
+
+    if ruta_salida[0]=="/":
+        blob_name=ruta_salida[1:]
+
+    upload_to_bucket(blob_name,ruta_salida,bucket_name,storage_client)
 
     return 'el video ha sido procesado correctamente'
 
