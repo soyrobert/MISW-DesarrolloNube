@@ -7,10 +7,31 @@ import pika
 from flask_jwt_extended import jwt_required, get_jwt_identity
 import json
 from application.models.models import  User
+from google.cloud import storage
 
 video_blueprint = Blueprint('video', __name__)
 amqp_url = os.environ['AMQP_URL']
 url_params = pika.URLParameters(amqp_url)
+
+#TODO REFACTOR PARA UNIFICAR ESTA FUNCION CON LA DE WORKER Y NO DUPLICAR CODIGO
+def upload_to_bucket(blob_name, file_path,bucket_name,storage_client):
+    """
+    Sube un archivo a un bucket de google cloud storage
+    :param blob_name: nombre del archivo en el bucket
+    :param file_path: ruta del archivo a subir
+    :param bucket_name: nombre del bucket
+    :param storage_client: cliente de google cloud storage
+    """
+    try:
+        bucket=storage_client.get_bucket(bucket_name)
+        blob=bucket.blob(blob_name)
+        blob.upload_from_filename(file_path)
+        return True
+    except Exception as e:
+        print(e)
+        return False
+
+
 
 def enviar_tarea_worker_video(nombre_video):
     '''
@@ -64,6 +85,18 @@ def upload_video():
 
     filepath = os.path.join(directory_path, str(id_task) + "_" + filename)
     file.save(filepath)
+
+    #save the clip in gcp
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
+    storage_client = storage.Client()
+    blob_name=filepath
+    bucket_name='misw4204-202412-drones-equipo5'
+
+    if filepath[0]=="/":
+        blob_name=filepath[1:]
+
+    resultado_bucket=upload_to_bucket(blob_name,filepath,bucket_name,storage_client)
+
 
     parametros_tarea_worker={"filepath":filepath,"id_task":id_task}
     
