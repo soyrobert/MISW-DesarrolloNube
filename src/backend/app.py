@@ -7,6 +7,7 @@ from application.controllers.video_controller import video_blueprint
 from application.controllers.registro_controller import signup_blueprint
 from application.controllers.login_controller import login_blueprint
 from application.controllers.video_download_controller import video_download_blueprint
+from application.controllers.health_controller import health_blueprint
 
 def create_app(config_class=Config):
     app = Flask(__name__)
@@ -24,6 +25,7 @@ def create_app(config_class=Config):
     app.register_blueprint(signup_blueprint, url_prefix='/api')
     app.register_blueprint(login_blueprint, url_prefix='/api')
     app.register_blueprint(video_download_blueprint, url_prefix='/api')
+    app.register_blueprint(health_blueprint, url_prefix='/api')    
 
 
     return app
