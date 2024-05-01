@@ -50,7 +50,10 @@ def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
     if ruta_salida[0]=="/":
         blob_name=ruta_salida[1:]
 
-    upload_to_bucket(blob_name,ruta_salida,bucket_name,storage_client)
+    resultado_bucket=upload_to_bucket(blob_name,ruta_salida,bucket_name,storage_client)
 
-    return 'el video ha sido procesado correctamente'
+    if resultado_bucket:
+        print('el video ha sido procesado correctamente')
+    else:
+        print('el video no ha sido procesado correctamente')
 
