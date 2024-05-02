@@ -2,6 +2,7 @@ from moviepy.editor import *
 import os
 import numpy as np
 from fun_interaccion_gcp import upload_to_bucket
+from fun_interaccion_gcp import download_from_bucket
 from google.cloud import storage
 
 def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
@@ -10,6 +11,21 @@ def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
     genera el video procesado con las especificaciones del enunciado
     '''    
     
+    #se descarga el video de gcp
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
+    storage_client = storage.Client()
+    blob_name=ruta_video_prueba
+
+    if ruta_video_prueba[0]=="/":
+        blob_name=ruta_video_prueba[1:]
+
+    bucket_name='misw4204-202412-drones-equipo5'
+    directory = os.path.dirname(ruta_video_prueba)
+
+    if not os.path.exists(directory):os.makedirs(directory)
+    
+    download_from_bucket(blob_name,ruta_video_prueba, 'misw4204-202412-drones-equipo5',storage_client)
+
     if not os.path.isfile(ruta_video_prueba):
         return (f"El video de prueba no existe en la ruta especificada: {ruta_video_prueba}")
  
@@ -42,8 +58,6 @@ def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
     final_clip.write_videofile(ruta_salida,fps=24)
 
     #save the clip in gcp
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
-    storage_client = storage.Client()
     blob_name=ruta_salida
     bucket_name='misw4204-202412-drones-equipo5'
 

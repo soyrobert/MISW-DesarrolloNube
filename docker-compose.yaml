@@ -28,9 +28,9 @@ services:
       DATABASE_IP: 'db'
     depends_on:
       - broker_video
-    volumes:
-    - videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
-    - videos_editados:/usr/src/app/uploads/videos_editados
+    #volumes:
+    #- videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
+    #- videos_editados:/usr/src/app/uploads/videos_editados
 
   broker_video:
     image: rabbitmq:3-management
@@ -74,11 +74,11 @@ services:
     networks:
       - dev-cloud-network
     volumes:
-      - videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
-      - videos_editados:/usr/src/app/uploads/videos_editados
+      #- videos_sin_editar:/usr/src/app/uploads/videos_sin_editar
+      #- videos_editados:/usr/src/app/uploads/videos_editados
       - ./resources/logo:/src/resources/logo
 volumes:
   pg-data:
     driver: local
-  videos_sin_editar: 
-  videos_editados:
+  #videos_sin_editar: 
+  #videos_editados:
