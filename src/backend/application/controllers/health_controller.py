@@ -1,5 +1,6 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify, make_response
 from application.models.models import db
+from sqlalchemy import text
 
 health_blueprint = Blueprint('health', __name__)
 
@@ -10,15 +11,16 @@ def health_check():
         "database": "connected"
     }
 
-    # Verificando conexión con la base de datos
     try:
-        # Realiza una consulta simple
-        result = db.session.execute('SELECT 1')
+
+        db.session.execute(text('SELECT 1'))
         db.session.commit()
+
+        return make_response(jsonify(response), 200)
     except Exception as e:
         db.session.rollback()
         response["database"] = "disconnected"
         response["status"] = "unhealthy"
         response["error"] = str(e)
 
-    return jsonify(response)
+        return make_response(jsonify(response), 503)
