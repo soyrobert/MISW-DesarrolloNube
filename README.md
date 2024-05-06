@@ -14,8 +14,9 @@ Repositorio Desarrollo de Software en la nube - MISW 4204 del equipo 5 conformad
 * worker: contenedor de codigo que escucha las tareas y ejecuta el trabajo de procesamiento de video
 * nginx: api gateway de los microservicios anteriores
 
+Los anteriores componentes se encuentran replicados en el respectivo proyecto en Google Cloud Platform. Cada componente tiene un archivo docker compose que permite desplegar su contender adentro de la respectiva maquina virtual.
 
-## Instrucciones de ejecución.
+## Instrucciones de ejecución en ambiente de desarrollo local.
 
 ### Clonar el repositorio
 Para clonar el repositorio:
