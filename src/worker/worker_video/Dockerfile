@@ -16,4 +16,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 ENV PYTHONUNBUFFERED=1
 
 # Run receiver.py when the container launches
-CMD ["python", "worker_video.py"]
+CMD ["python", "worker_video_gcp.py"]
