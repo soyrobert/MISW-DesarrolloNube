@@ -1,6 +1,7 @@
 
 import os
 from google.cloud import pubsub_v1
+
 os.chdir('src/worker/worker_video')
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
 
@@ -12,9 +13,18 @@ def callback(message):
     message.ack()
 
 with pubsub_v1.SubscriberClient() as subscriber:
-    future = subscriber.subscribe(subscription_name, callback)
-
-    try:
-        future.result()
-    except KeyboardInterrupt:
-        future.cancel() 
+    
+    continuar = True
+    while continuar:
+        try:
+            print('esperando mensajes')
+            future = subscriber.subscribe(subscription_name, callback)
+            future.result(timeout=15)
+            print('esperando mensajes')
+        except Exception as e:
+            if type(e).__name__ == 'TimeoutError':
+                print('No hay mensajes')
+                continuar = True
+            else:
+                print('Error desconocido')
+                continuar = False
