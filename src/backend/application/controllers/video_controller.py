@@ -8,10 +8,13 @@ from flask_jwt_extended import jwt_required, get_jwt_identity
 import json
 from application.models.models import  User
 from google.cloud import storage
+from google.cloud import pubsub_v1
 
 video_blueprint = Blueprint('video', __name__)
 amqp_url = os.environ['AMQP_URL']
 url_params = pika.URLParameters(amqp_url)
+topic_name='projects/idlr-miso-2024/topics/tareas_videos' #topic en pub sub
+
 
 #TODO REFACTOR PARA UNIFICAR ESTA FUNCION CON LA DE WORKER Y NO DUPLICAR CODIGO
 def upload_to_bucket(blob_name, file_path,bucket_name,storage_client):
@@ -31,9 +34,18 @@ def upload_to_bucket(blob_name, file_path,bucket_name,storage_client):
         print(e)
         return False
 
+def enviar_tarea_worker_video_pubsubgcp(file_path,id_task):
+    '''
+    funcion que manda a la cola de mensajes pubsub de gcp la tarea para el worker
+    '''
+    publisher = pubsub_v1.PublisherClient()
+    message='Procesar tarea  de video con id '+str(id_task)
+    data=message.encode('utf-8')
+    future = publisher.publish(topic_name, data, file_path=file_path, id_task=str(id_task))
+    future.result()
 
 
-def enviar_tarea_worker_video(nombre_video):
+def enviar_tarea_worker_video_rabbit(nombre_video):
     '''
     funcion que se encarga de enviarle el nombre del video como tarea a rabbit
     nombre_video: nombre del video a enviar a rabbit ej: 'video.mp4'
@@ -102,7 +114,7 @@ def upload_video():
     
     parametros_tarea_worker_str = json.dumps(parametros_tarea_worker)
 
-    enviar_tarea_worker_video(parametros_tarea_worker_str)
+    enviar_tarea_worker_video_pubsubgcp(filepath,id_task)
 
     return jsonify({'message': f'Video {filepath} uploaded', 'task_id': new_task.id}), 201
 
