@@ -7,8 +7,8 @@ from google.cloud import pubsub_v1
 from sqlalchemy import create_engine
 
 # set parameters
-#database_ip = os.environ['DATABASE_IP']
-database_ip='34.70.72.147'
+database_ip = os.environ['DATABASE_IP']
+#database_ip='34.70.72.147'
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
 topic_name='projects/idlr-miso-2024/topics/tareas_videos'
