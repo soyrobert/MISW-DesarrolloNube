@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+import concurrent.futures
 import pika, sys, os
 import time
 import json
@@ -52,19 +53,21 @@ def ejecutar_tarea(message):
     print(" [x] Done")
 
 
-with pubsub_v1.SubscriberClient() as subscriber:
-    
-    continuar = True
-    while continuar:
+def subscriber_callback(subscriber):
+    with subscriber:
+        print(f'Escuchando mensajes en {subscription_name}')
+        future = subscriber.subscribe(subscription_name, callback=ejecutar_tarea)
         try:
-            print('esperando mensajes de la cola')
-            future = subscriber.subscribe(subscription_name, ejecutar_tarea)
-            future.result(timeout=120)
-            
+            future.result()
         except Exception as e:
-            if type(e).__name__ == 'TimeoutError':
-                print('No hubo mensajes timout, se intentará volver a recibir')
-                continuar = True
-            else:
-                print('Error desconocido')
-                continuar = False
+            print('Error desconocido: %s', e)
+
+
+def main():
+    subscriber = pubsub_v1.SubscriberClient()
+
+    with concurrent.futures.ThreadPoolExecutor() as executor:
+        executor.submit(subscriber_callback, subscriber)
+
+if __name__ == '__main__':
+    main()
