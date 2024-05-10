@@ -59,7 +59,7 @@ with pubsub_v1.SubscriberClient() as subscriber:
         try:
             print('esperando mensajes de la cola')
             future = subscriber.subscribe(subscription_name, ejecutar_tarea)
-            future.result(timeout=15)
+            future.result(timeout=120)
             
         except Exception as e:
             if type(e).__name__ == 'TimeoutError':
