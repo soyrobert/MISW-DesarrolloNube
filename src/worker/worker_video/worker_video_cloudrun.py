@@ -1,6 +1,6 @@
 import os
 import logging
-
+import base64
 from flask import Flask,request,jsonify
 
 app = Flask(__name__)
@@ -10,13 +10,16 @@ logging.basicConfig(level=logging.INFO)
 
 @app.route("/",methods=['POST'])
 def handle_post():
-    if request.is_json:
-        data = request.get_json()
+    envelope = request.get_json()
+    if envelope:
+        message = envelope['message']
+        data= message['data']
+        data = base64.b64decode(data).decode('utf-8').strip()
         response = {
             "message": "Received data successfully",
             "data": data
         }
-        app.logger.info("mensaje recibido exitosamente, data: " + str(data))
+        app.logger.info("mensaje recibido exitosamente, data: " + data)
         return jsonify(response), 200
     else:
         app.logger.error("error en la solicitud")
