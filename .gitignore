@@ -1,3 +1,4 @@
 /src/database/postgres-data/*
 *idlr-miso*.json
 *.pyc
+*miso-nube-entregafinal-42b89456bcf3.json

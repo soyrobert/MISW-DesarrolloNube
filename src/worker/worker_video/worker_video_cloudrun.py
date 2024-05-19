@@ -2,6 +2,9 @@ import os
 import logging
 import base64
 from flask import Flask,request,jsonify
+from google.cloud import storage
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ["APIKEYCLOUDSTORAGE"]
 
 app = Flask(__name__)
 
@@ -10,6 +13,14 @@ logging.basicConfig(level=logging.INFO)
 
 @app.route("/",methods=['POST'])
 def handle_post():
+
+    storage_client = storage.Client()
+    bucket_name='misw4204-202412-drones-equipo5-entregafinal'
+
+    blobs = storage_client.list_blobs(bucket_name)
+    for blob in blobs:
+        app.logger.info("conexion exitosa a bucket , archivo: " + blob.name)
+
     envelope = request.get_json()
     if envelope:
         message = envelope['message']
