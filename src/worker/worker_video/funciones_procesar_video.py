@@ -5,31 +5,30 @@ from fun_interaccion_gcp import upload_to_bucket
 from fun_interaccion_gcp import download_from_bucket
 from google.cloud import storage
 
-def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
+def procesar_video(ruta_video_sin_editar,ruta_logo,ruta_video_editado,storage_client):
     '''
     funcion que toma la ruta de un video y del logo y 
     genera el video procesado con las especificaciones del enunciado
     '''    
     
     #se descarga el video de gcp
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
-    storage_client = storage.Client()
-    blob_name=ruta_video_prueba
 
-    if ruta_video_prueba[0]=="/":
-        blob_name=ruta_video_prueba[1:]
+    blob_name=ruta_video_sin_editar
 
-    bucket_name='misw4204-202412-drones-equipo5'
-    directory = os.path.dirname(ruta_video_prueba)
+    if ruta_video_sin_editar[0]=="/":
+        blob_name=ruta_video_sin_editar[1:]
+
+    bucket_name='misw4204-202412-drones-equipo5-entregafinal'
+    directory = os.path.dirname(ruta_video_sin_editar)
 
     if not os.path.exists(directory):os.makedirs(directory)
     
-    download_from_bucket(blob_name,ruta_video_prueba, 'misw4204-202412-drones-equipo5',storage_client)
+    download_from_bucket(blob_name,ruta_video_sin_editar, 'misw4204-202412-drones-equipo5-entregafinal',storage_client)
 
-    if not os.path.isfile(ruta_video_prueba):
-        return (f"El video de prueba no existe en la ruta especificada: {ruta_video_prueba}")
+    if not os.path.isfile(ruta_video_sin_editar):
+        return (f"El video de prueba no existe en la ruta especificada: {ruta_video_sin_editar}")
  
-    clip=VideoFileClip(ruta_video_prueba)
+    clip=VideoFileClip(ruta_video_sin_editar)
 
     # Calculate the width and height for the new aspect ratio of 16:9
     new_width = clip.w
@@ -55,16 +54,16 @@ def procesar_video(ruta_video_prueba,ruta_logo,ruta_salida):
  
 
     #save the clip
-    final_clip.write_videofile(ruta_salida,fps=24)
+    final_clip.write_videofile(ruta_video_editado,fps=24)
 
     #save the clip in gcp
-    blob_name=ruta_salida
-    bucket_name='misw4204-202412-drones-equipo5'
+    blob_name=ruta_video_editado
+    bucket_name='misw4204-202412-drones-equipo5-entregafinal'
 
-    if ruta_salida[0]=="/":
-        blob_name=ruta_salida[1:]
+    if ruta_video_editado[0]=="/":
+        blob_name=ruta_video_editado[1:]
 
-    resultado_bucket=upload_to_bucket(blob_name,ruta_salida,bucket_name,storage_client)
+    resultado_bucket=upload_to_bucket(blob_name,ruta_video_editado,bucket_name,storage_client)
 
     if resultado_bucket:
         print('el video ha sido procesado correctamente')

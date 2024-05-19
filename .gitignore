@@ -2,3 +2,6 @@
 *idlr-miso*.json
 *.pyc
 *miso-nube-entregafinal-42b89456bcf3.json
+src/worker/worker_video/videos_editados/*
+src/worker/worker_video/videos_sin_editar/*
+src/worker/worker_video/__pycache__/*
