@@ -5,8 +5,6 @@ from flask import Flask,request,jsonify
 from google.cloud import storage
 import json
 
-service_account_key_json = os.environ["APIKEYCLOUDSTORAGE"]
-service_account_key = json.loads(service_account_key_json)
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "secrets/miso-nube-entregafinal-42b89456bcf3.json"
 
