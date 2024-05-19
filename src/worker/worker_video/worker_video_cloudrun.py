@@ -6,7 +6,7 @@ from google.cloud import storage
 import json
 
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "/secrets/miso-nube-entregafinal-42b89456bcf3.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ["APIKEYCLOUDSTORAGE"]
 
 app = Flask(__name__)
 
