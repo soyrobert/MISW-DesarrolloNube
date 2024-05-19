@@ -3,8 +3,12 @@ import logging
 import base64
 from flask import Flask,request,jsonify
 from google.cloud import storage
+import json
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = os.environ["APIKEYCLOUDSTORAGE"]
+service_account_key_json = os.environ["APIKEYCLOUDSTORAGE"]
+service_account_key = json.loads(service_account_key_json)
+
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = json.dumps(service_account_key)
 
 app = Flask(__name__)
 
