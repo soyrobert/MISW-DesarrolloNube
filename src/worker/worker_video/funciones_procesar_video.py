@@ -56,6 +56,12 @@ def procesar_video(ruta_video_sin_editar,ruta_logo,ruta_video_editado,storage_cl
     #save the clip
     final_clip.write_videofile(ruta_video_editado,fps=24)
 
+    #close all the clips so that the files can be deleted
+    final_clip.close()
+    resized_clip.close()
+    clip.close()
+
+
     #save the clip in gcp
     blob_name=ruta_video_editado
     bucket_name='misw4204-202412-drones-equipo5-entregafinal'
@@ -64,6 +70,12 @@ def procesar_video(ruta_video_sin_editar,ruta_logo,ruta_video_editado,storage_cl
         blob_name=ruta_video_editado[1:]
 
     resultado_bucket=upload_to_bucket(blob_name,ruta_video_editado,bucket_name,storage_client)
+
+    #erase the local videos
+    if os.path.isfile(ruta_video_sin_editar):
+        os.remove(ruta_video_sin_editar)
+    if os.path.isfile(ruta_video_editado):
+        os.remove(ruta_video_editado)
 
     if resultado_bucket:
         print('el video ha sido procesado correctamente')
