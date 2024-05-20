@@ -5,3 +5,4 @@
 src/worker/worker_video/videos_editados/*
 src/worker/worker_video/videos_sin_editar/*
 src/worker/worker_video/__pycache__/*
+videos_sin_editar/video_test_1_480_270.mp4

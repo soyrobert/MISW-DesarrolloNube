@@ -50,7 +50,34 @@ def ejecutar_tarea(ruta_video_sin_editar,id_task):
 
     print(" [x] Done")
 
+def verificar_obtener_parametros(envelope):
+    '''
+    - funcion que verifica y obtiene los parametros de la solicitud
+    - verifica que el mensaje tenga los atributos correctos
+    - retorna los datos del mensaje
+    '''
+    if "message" not in envelope.keys():
+        logging.error("error en la solicitud")
+        return jsonify({"error": "Request must specify the message"}), 400
 
+    message = envelope['message']
+
+    if "data" not in message.keys() or "attributes" not in message.keys():
+        logging.error("error en la solicitud")
+        return jsonify({"error": "Message must contain data and attributes"}), 400
+
+    data= message['data']
+    data = base64.b64decode(data).decode('utf-8').strip()
+    attributes=message['attributes']
+
+    if "file_path" not in attributes.keys() or "id_task" not in attributes.keys():
+        logging.error("error en la solicitud")
+        return jsonify({"error": "Attributes must contain file_path and id_task"}), 400
+
+    file_path=attributes['file_path']
+    id_task=attributes['id_task']
+
+    return data, file_path, id_task
 
 app = Flask(__name__)
 
@@ -58,29 +85,11 @@ app = Flask(__name__)
 def handle_post():
 
     envelope = request.get_json()
+
     if envelope:
 
-        if "message" not in envelope.keys():
-            app.logger.error("error en la solicitud")
-            return jsonify({"error": "Request must specify the message"}), 400
-
-        message = envelope['message']
-
-        if "data" not in message.keys() or "attributes" not in message.keys():
-            app.logger.error("error en la solicitud")
-            return jsonify({"error": "Message must contain data and attributes"}), 400
-
-        data= message['data']
-        data = base64.b64decode(data).decode('utf-8').strip()
-        attributes=message['attributes']
-
-        if "file_path" not in attributes.keys() or "id_task" not in attributes.keys():
-            app.logger.error("error en la solicitud")
-            return jsonify({"error": "Attributes must contain file_path and id_task"}), 400
-
-        file_path=attributes['file_path']
-        id_task=attributes['id_task']
-
+        data, file_path, id_task = verificar_obtener_parametros(envelope)
+        
         ejecutar_tarea(ruta_video_sin_editar=file_path,id_task=id_task)
 
         response = {
