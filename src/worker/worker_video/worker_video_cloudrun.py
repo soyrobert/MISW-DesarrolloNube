@@ -5,6 +5,7 @@ from flask import Flask,request,jsonify
 from google.cloud import storage
 from funciones_procesar_video import procesar_video
 import json
+from sqlalchemy import create_engine
 
 bucket_name='misw4204-202412-drones-equipo5-entregafinal'
 
@@ -24,6 +25,22 @@ except Exception as e:
     logging.error(" error al iniciar el worker, no se pudo conectar a cloud storage")
     logging.error(e)
     exit(1)
+
+def actualizar_estado_procesado(id_task):
+    '''
+    - funcion que actualiza el estado de una tarea a procesado
+    - recibe el id de la tarea
+    - actualiza el estado de la tarea en la base de datos
+    '''
+    try:
+        database_ip = os.environ['DATABASE_IP']
+        engine = create_engine('postgresql://admin:admin@' + database_ip + ':5432/idlr_db')
+        conn = engine.connect()
+        query_actualizar = "UPDATE tasks SET status='processed' WHERE id=" + str(id_task)
+        conn.execute(query_actualizar)
+    except Exception as e:
+        logging.error("error al actualizar el estado de la tarea en la base de datos")
+
 
 def ejecutar_tarea(ruta_video_sin_editar,id_task):
     '''
@@ -45,8 +62,7 @@ def ejecutar_tarea(ruta_video_sin_editar,id_task):
                    ruta_video_editado=ruta_video_editado,
                    storage_client=storage_client)
 
-    query_actualizar = "UPDATE tasks SET status='processed' WHERE id=" + str(id_task)
-    #conn.execute(query_actualizar)
+    actualizar_estado_procesado(id_task)
 
     print(" [x] Done")
 
