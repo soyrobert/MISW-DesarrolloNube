@@ -31,12 +31,14 @@ try:
     DB_USER = os.environ.get('DB_USER')
     DB_PASSWORD = os.environ.get('DB_PASSWORD')
     DATABASE_IP = os.environ.get('DATABASE_IP')
-    engine = create_engine(f'postgresql://{DB_USER}:{DB_PASSWORD}@{DATABASE_IP}:5432/{DB_NAME}')
+    conexion= f'postgresql://{DB_USER}:{DB_PASSWORD}@{DATABASE_IP}:5432/{DB_NAME}'
+    engine = create_engine(conexion)
     conn = engine.connect()
     logging.info("conexion a la base de datos exitosa")
 
 except Exception as e:
-    logging.error(" error al conectar a la base de datos")
+    logging.error(f'error al conectar a la base de datos: {conexion}')
+    logging.error(e)
 
 
 def actualizar_estado_procesado(id_task):
