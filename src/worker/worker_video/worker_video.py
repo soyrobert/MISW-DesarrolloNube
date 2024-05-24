@@ -5,7 +5,7 @@ from flask import Flask,request,jsonify
 from google.cloud import storage
 from funciones_procesar_video import procesar_video
 import json
-from sqlalchemy import create_engine
+from sqlalchemy import create_engine,text
 
 bucket_name='misw4204-202412-drones-equipo5-entregafinal'
 
@@ -26,6 +26,19 @@ except Exception as e:
     logging.error(e)
     exit(1)
 
+try:
+    DB_NAME = os.environ.get('DB_NAME')
+    DB_USER = os.environ.get('DB_USER')
+    DB_PASSWORD = os.environ.get('DB_PASSWORD')
+    DATABASE_IP = os.environ.get('DATABASE_IP')
+    engine = create_engine(f'postgresql://{DB_USER}:{DB_PASSWORD}@{DATABASE_IP}:5432/{DB_NAME}')
+    conn = engine.connect()
+    logging.info("conexion a la base de datos exitosa")
+
+except Exception as e:
+    logging.error(" error al conectar a la base de datos")
+
+
 def actualizar_estado_procesado(id_task):
     '''
     - funcion que actualiza el estado de una tarea a procesado
@@ -33,13 +46,14 @@ def actualizar_estado_procesado(id_task):
     - actualiza el estado de la tarea en la base de datos
     '''
     try:
-        database_ip = os.environ['DATABASE_IP']
-        engine = create_engine('postgresql://admin:admin@' + database_ip + ':5432/idlr_db')
-        conn = engine.connect()
-        query_actualizar = "UPDATE tasks SET status='processed' WHERE id=" + str(id_task)
-        conn.execute(query_actualizar)
+        
+        query_actualizar = text(f'UPDATE "public"."tasks" SET status=\'processed\' WHERE id={id_task}')
+        conn.execute(query_actualizar) 
+        conn.commit()
+        
     except Exception as e:
         logging.error("error al actualizar el estado de la tarea en la base de datos")
+        
 
 
 def ejecutar_tarea(ruta_video_sin_editar,id_task):
