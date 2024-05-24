@@ -54,7 +54,8 @@ def actualizar_estado_procesado(id_task):
         conn.commit()
         
     except Exception as e:
-        logging.error("error al actualizar el estado de la tarea en la base de datos")
+        logging.error(f'error al actualizar el estado de la tarea en la base de datos: {query_actualizar}')
+        logging.error(e)
         
 
 
