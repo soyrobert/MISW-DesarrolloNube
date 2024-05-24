@@ -51,10 +51,17 @@ def actualizar_estado_procesado(id_task):
         
         query_actualizar = text(f'UPDATE "public"."tasks" SET status=\'processed\' WHERE id={id_task}')
         conn.execute(query_actualizar) 
-        conn.commit()
         
+        try:
+            conn.commit()
+        except Exception as e:
+            logging.info('no se realizó commit a la base de datos')
+        
+        logging.info(f'actualizado el estado de la tarea {id_task} en la base de datos')
+
     except Exception as e:
-        logging.error("error al actualizar el estado de la tarea en la base de datos")
+        logging.error(f'error al actualizar el estado de la tarea en la base de datos: {query_actualizar}')
+        logging.error(e)
         
 
 
