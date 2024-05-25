@@ -4,7 +4,7 @@ from sqlalchemy import text
 
 health_blueprint = Blueprint('health', __name__)
 
-@health_blueprint.route('/health', methods=['GET'])
+@health_blueprint.route('/', methods=['GET'])
 def health_check():
     response = {
         "status": "healthy",

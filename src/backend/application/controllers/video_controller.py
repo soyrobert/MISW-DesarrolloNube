@@ -13,7 +13,7 @@ from google.cloud import pubsub_v1
 video_blueprint = Blueprint('video', __name__)
 amqp_url = os.environ['AMQP_URL']
 url_params = pika.URLParameters(amqp_url)
-topic_name='projects/idlr-miso-2024/topics/tareas_videos' #topic en pub sub
+topic_name= os.environ['TOPIC_VIDEOS']
 
 
 #TODO REFACTOR PARA UNIFICAR ESTA FUNCION CON LA DE WORKER Y NO DUPLICAR CODIGO
@@ -62,7 +62,7 @@ def enviar_tarea_worker_video_rabbit(nombre_video):
 
     connection.close()
 
-@video_blueprint.route('/tasks', methods=['POST'])
+@video_blueprint.route('/', methods=['POST'])
 @jwt_required()
 def upload_video():
     if 'file' not in request.files:
@@ -99,10 +99,10 @@ def upload_video():
     file.save(filepath)
 
     #save the clip in gcp
-    os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
+    # os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "idlr-miso-2024-ff17c98a513a.json"
     storage_client = storage.Client()
-    blob_name=filepath
-    bucket_name='misw4204-202412-drones-equipo5'
+    blob_name = filepath
+    bucket_name = os.environ['BUCKET_NAME_VIDEOS']
 
     if filepath[0]=="/":
         blob_name=filepath[1:]
@@ -119,7 +119,7 @@ def upload_video():
     return jsonify({'message': f'Video {filepath} uploaded', 'task_id': new_task.id}), 201
 
 
-@video_blueprint.route('/tasks', methods=['GET'])
+@video_blueprint.route('/', methods=['GET'])
 @jwt_required()
 def get_tasks():
     """
@@ -152,7 +152,7 @@ def get_tasks():
     tasks_list = [{'id': task.id, 'status': task.status} for task in tasks]
     return jsonify({'data': tasks_list}), 200
 
-@video_blueprint.route('/tasks/<int:task_id>', methods=['GET'])
+@video_blueprint.route('/<int:task_id>', methods=['GET'])
 @jwt_required()
 def get_task(task_id):
     task = Task.query.get(task_id)
@@ -161,7 +161,7 @@ def get_task(task_id):
         return jsonify({'message': 'Task not found'}), 404
     if task.status == "processed":
         file_path = f"/usr/src/app/uploads/videos_editados/{task.file_path}"
-        download_url = f'https://storage.googleapis.com/misw4204-202412-drones-equipo5/usr/src/app/uploads/videos_editados/{task.file_path}',
+        download_url = f'{os.environ["BASE_URL_DOWNLOAD_VIDEOS"]}/{task.file_path}',
     else:
         file_path = ""
         download_url = "No disponible para descarga. El video no se ha procesado."
@@ -174,7 +174,7 @@ def get_task(task_id):
     })
 
 
-@video_blueprint.route('/tasks/<int:task_id>', methods=['DELETE'])
+@video_blueprint.route('/<int:task_id>', methods=['DELETE'])
 @jwt_required()
 def delete_task(task_id):
     task = Task.query.get(task_id)

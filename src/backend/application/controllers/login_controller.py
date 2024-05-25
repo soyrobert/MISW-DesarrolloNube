@@ -5,7 +5,7 @@ from datetime import timedelta
 
 login_blueprint = Blueprint('login', __name__)
 
-@login_blueprint.route('/auth/login/ping', methods=['GET'])
+@login_blueprint.route('/ping', methods=['GET'])
 def ping():
     try:
         return jsonify({'message': 'pong'}), 200
@@ -15,7 +15,7 @@ def ping():
             'error': str(e)
         }), 500
 
-@login_blueprint.route('/auth/login', methods=['POST'])
+@login_blueprint.route('/', methods=['POST'])
 def login():
     """
     Permite recuperar el token de autorización para consumir los recursos del API

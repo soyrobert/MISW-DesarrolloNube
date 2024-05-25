@@ -4,7 +4,7 @@ from flask import Blueprint, jsonify, send_file
 video_download_blueprint = Blueprint('video_download', __name__)
 
 
-@video_download_blueprint.route('/video/test/download/<string:video_name>', methods=['GET'])
+@video_download_blueprint.route('/test/download/<string:video_name>', methods=['GET'])
 def test_download_video(video_name):
     try:
         if video_name == '':
@@ -42,7 +42,7 @@ def test_download_video(video_name):
         }), 500
     
 
-@video_download_blueprint.route('/video/download/<int:ano>/<int:mes>/<int:dia>/<string:video_name>', methods=['GET'])
+@video_download_blueprint.route('/download/<int:ano>/<int:mes>/<int:dia>/<string:video_name>', methods=['GET'])
 def download_video(ano, mes, dia, video_name):
     try:
         if video_name == '':

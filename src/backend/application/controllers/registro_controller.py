@@ -4,7 +4,7 @@ from application.models.models import db, User
 signup_blueprint = Blueprint('signup', __name__)
 
 
-@signup_blueprint.route('/auth/signup/ping', methods=['GET'])
+@signup_blueprint.route('/ping', methods=['GET'])
 def ping():
     try:
         return jsonify({'message': 'pong'}), 200
@@ -15,7 +15,7 @@ def ping():
         }), 500
 
 
-@signup_blueprint.route('/auth/signup', methods=['POST'])
+@signup_blueprint.route('/', methods=['POST'])
 def signup():
     """
     Permite crear una cuenta con los campos para nombre de usuario, correo electrónico y

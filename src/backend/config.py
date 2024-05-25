@@ -6,7 +6,7 @@ class Config:
     DB_NAME = os.environ.get('DB_NAME', 'idlr_db')
     DB_USER = os.environ.get('DB_USER', 'admin')
     DB_PASSWORD = os.environ.get('DB_PASSWORD', 'admin')
-    DB_CONNECTION_NAME = os.environ.get('DB_CONNECTION_NAME', 'miso-nube-entregafinal:us-central1:my-instance')
+    DB_CONNECTION_NAME = os.environ["DATABASE_CONNECTION_NAME"]
     SQLALCHEMY_DATABASE_URI = (
         f"postgresql+pg8000://{DB_USER}:{DB_PASSWORD}@/"
         f"{DB_NAME}?unix_sock=/cloudsql/{DB_CONNECTION_NAME}/.s.PGSQL.5432"
